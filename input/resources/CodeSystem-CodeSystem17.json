@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem17",
+  "id": "CodeSystem17",
+  "title": "判定区分（（財）日本予防医学協会）",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem17.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:08:25.277+00:00",
+    "source": "#OqAEwhKq9Qt2CSs2"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5020.1.5"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-jpm.html"
+}

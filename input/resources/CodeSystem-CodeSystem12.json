@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem12",
+  "id": "CodeSystem12",
+  "title": "追加健診項目コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem12.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:08:06.049+00:00",
+    "source": "#L9e5AAgB6FRgU6cD"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5005"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-observationCode.html"
+}

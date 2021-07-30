@@ -1,0 +1,1 @@
+custodian要素に、文書管理責任組織を表すOrganizationリソースへの参照として記述する。

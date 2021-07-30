@@ -1,0 +1,325 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-Coverage2",
+  "meta": {
+    "versionId": "51",
+    "lastUpdated": "2021-07-02T10:36:14.696+00:00",
+    "source": "#43Q5bmtJmS57BY10"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Financial.Support"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage2.html",
+  "version": "0.5.0",
+  "name": "Coverage2",
+  "title": "Coverageリソース　保険証情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "description": "保険証情報を記録する。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "cpha3pharm",
+      "uri": "http://www.pharmacists.ca/",
+      "name": "Canadian Pharmacy Associaiton eclaims standard"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage.text",
+        "path": "Coverage.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.text.status",
+        "path": "Coverage.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.text.div",
+        "path": "Coverage.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.extension",
+        "path": "Coverage.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.extension:1",
+        "path": "Coverage.extension",
+        "sliceName": "1",
+        "short": "被保険者証記号を表す拡張「InsuredPersonSymbol」。保険種別が「1：医保」、「2：国保」の場合に記録する。被保険者証記号がない場合は、本拡張要素自体出現しない。",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-InsuredPersonSymbol.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.extension:2",
+        "path": "Coverage.extension",
+        "sliceName": "2",
+        "short": "被保険者証番号を表す拡張「InsuredPersonNumber」。保険種別が「1：医保」、「2：国保」、「7：後期高齢者」の場合に記録する。それ以外の場合は、本拡張要素自体出現しない。",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-InsuredPersonNumber.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "short": "処方箋発行時に真に有効な保険かどうかは意味しない。",
+        "fixedCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "short": "保険種別コード。",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-insuranceType.html"
+        }
+      },
+      {
+        "id": "Coverage.type.coding",
+        "path": "Coverage.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.system",
+        "path": "Coverage.type.coding.system",
+        "short": "保険種別コード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.100495.20.2.61",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.code",
+        "path": "Coverage.type.coding.code",
+        "short": "保険種別コード。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "1"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "short": "この保険で給付される受診者情報（Patientリソース）へのリテラル参照。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary.reference",
+        "path": "Coverage.beneficiary.reference",
+        "short": "PatientリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:11f0a9a6-a91d-3aef-fc4e-069995b89c4f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.dependent",
+        "path": "Coverage.dependent",
+        "short": "被保険者証記号・番号に対する個人単位被保険者番号（枝番）。「オンライン又は光ディスク等による請求に係る記録条件仕様（医科用）」に従い、桁数が2桁に満たない場合は、先頭に\"0\"を記録し2桁で記録する。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "01"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.relationship",
+        "path": "Coverage.relationship",
+        "short": "給付される患者と被保険者との関係（本人、または被扶養者）。被保険者区分コード表より「1：被保険者」、または、「2：被扶養者」を指定する。",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-subscriber-relationship.html"
+        }
+      },
+      {
+        "id": "Coverage.relationship.coding",
+        "path": "Coverage.relationship.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.relationship.coding.system",
+        "path": "Coverage.relationship.coding.system",
+        "short": "被保険者区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.100495.20.2.62",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.relationship.coding.code",
+        "path": "Coverage.relationship.coding.code",
+        "short": "被保険者区分コード。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "1"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.relationship.coding.display",
+        "path": "Coverage.relationship.coding.display",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "被保険者"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period",
+        "path": "Coverage.period",
+        "short": "保険証の有効期間。保険証に明示的に記載がある場合、かつ、医療機関がその情報を把握している場合のみ記録する。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "short": "保険証の有効期間の開始日。資格取得日。ISO8601に準拠してyyyy-mm-dd形式で指定する。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "short": "保険証の有効期間の終了日。資格喪失日。ISO8601に準拠してyyyy-mm-dd形式で指定する。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "short": "費用負担者（医療保険の場合は保険者）情報。保険種別が「6：自費」の場合、患者本人を表すPatientリソースへの参照。それ以外の保険種別は、費用負担者を表すOrganizationリソースへの参照。",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor.reference",
+        "path": "Coverage.payor.reference",
+        "short": "PatientリソースまたはOrganizationリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:7c9f9f7fe546-0ac2-6828-a9e0b24e5750"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

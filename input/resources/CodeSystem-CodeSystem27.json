@@ -1,0 +1,34 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem27",
+  "id": "CodeSystem27",
+  "title": "セクション一覧",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem27.html",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-07-01T07:32:19.305+00:00",
+    "source": "#Xk0ub91Aa21WGNmG"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-CompositionSectionList.html",
+  "concept": [
+    {
+      "code": "01910",
+      "display": "健診セクション",
+      "definition": "健診項目の結果を格納するセクション。健診項目とは、受診者本人が作成したものではない健診結果（検体検査結果や診察項目など）を格納する。"
+    },
+    {
+      "code": "01920",
+      "display": "問診セクション",
+      "definition": "問診項目の結果を格納するセクション。問診項目とは、受診者本人が作成した健診項目を意味する。"
+    },
+    {
+      "code": "01990",
+      "display": "添付書類セクション",
+      "definition": "健診結果報告書の添付文書（画像結果報告書、心電図波形、DICOM画像など）を格納するセクション。"
+    }
+  ],
+  "count": 3
+}

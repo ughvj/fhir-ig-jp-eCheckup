@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "JLAC10-Specimen",
+  "id": "jp-eCheckup-JLAC10Specimen",
+  "title": "材料コード",
+  "description": "検体の材料コードを表すバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-JLAC10-Specimen.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:51:08.924+00:00",
+    "source": "#sg1y6gTw7X1Zlqnq"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem10.html"
+      }
+    ]
+  }
+}

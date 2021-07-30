@@ -1,0 +1,1045 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImplementationGuide
+    xmlns="http://hl7.org/fhir">
+    <id value="jp-eCheckup"/>
+    <meta>
+        <versionId value="298"/>
+        <lastUpdated value="2021-07-06T05:15:09.808+00:00"/>
+        <source value="#M9EtAqNsxCIeIAQ2"/>
+    </meta>
+    <url value="https://healthdataworks.net/hl7-fhir/ImplementationGuide/jp-eCheckup"/>
+    <version value="0.5.0"/>
+    <name value="JPeCheckup"/>
+    <title value="健康診断結果報告書"/>
+    <status value="draft"/>
+    <date value="2021-06-08"/>
+    <publisher value="HealthDataWorks"/>
+    <contact>
+        <name value="実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://healthdataworks.net/"/>
+        </telecom>
+    </contact>
+    <contact>
+        <name value="仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班"/>
+        <telecom>
+            <system value="url"/>
+            <value value="https://std.jpfhir.jp/"/>
+        </telecom>
+    </contact>
+    <description value="この実装ガイドは、HL7 FHIRのリソースに診断結果報告書の情報を設定して利用するためのドキュメントです。&#xA;&#xA;健康診断結果報告書FHIR®記述仕様書案β(2021.3.29版)より作成しています。"/>
+    <packageId value="jp-eCheckup"/>
+    <fhirVersion value="4.0.1"/>
+    <definition>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Bundle"/>
+                <display value="Bundle"/>
+            </reference>
+            <name value="Bundleリソース　文書情報"/>
+            <description value="管理的な情報を格納する要素として identifier, timestamp, signature などがあり、文書自体の内容情報を格納する要素としてひとつのentry要素がある。このentry要素の値として、複数のresource要素を含むブロックが繰り返される。各リソースは、他のリソースから参照する際に使用するUUID（一意となる値を自動発番する）を持つfullUrl要素を持つ。参照時にはReference型のreference要素に、このUUIDを指定する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Composition"/>
+                <display value="Compositionリソース　文書構成情報"/>
+            </reference>
+            <name value="Compositionリソース　文書構成情報"/>
+            <description value="健診結果報告書FHIR documentにentry として格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。 健診結果報告書は、4.1.1「文書構造」で述べたように、健診項目、及び、問診項目を格納するセクション、及び、添付文書を格納する添付文書セクションから構成される。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Patient"/>
+                <display value="Patientリソース　受診者情報"/>
+            </reference>
+            <name value="Patientリソース　受診者情報"/>
+            <description value="受診者情報はPatientリソースで記述する。必須（1..1）項目である。１つの健診結果報告書に対して関連する受診者は1名と限定する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-PractitionerRole"/>
+                <display value="PractitionerRole"/>
+            </reference>
+            <name value="PractitionerRoleリソース　文書作成者役割情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Organization"/>
+                <display value="Organization"/>
+            </reference>
+            <name value="Organizationリソース　検診結果報告書作成組織情報"/>
+            <description value="健康診断結果報告書を作成した施設は、PractitionerRoleリソース、及び、そのリソースから参照されるOrganizationリソースで表現する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Practitoner"/>
+                <display value="Practitoner"/>
+            </reference>
+            <name value="Practitionerリソース　検診結果報告書作成者情報"/>
+            <description value="健康診断結果報告書の作成者の記述が必要な場合には、PractitionerRoleリソースから参照されるPractitionerリソースを使用する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Coverage"/>
+                <display value="Coverage"/>
+            </reference>
+            <name value="Coverageリソース　受診券情報"/>
+            <description value="受診者が健診実施時に属した保険者の情報および、その保険者が発行した受診券に関する情報を表現する。本情報は、特定健診の結果を受診者の希望により電子的に提供するケースにおいては任意に記述して差し支えないが、それ以外ではなくてもよい。&#xA;&#xA;受診券が発行されないケースでは、本要素は出現しない。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Coverage2"/>
+                <display value="Coverage2"/>
+            </reference>
+            <name value="Coverageリソース　保険証情報"/>
+            <description value="保険証情報を記録する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Organization2"/>
+                <display value="Organization2"/>
+            </reference>
+            <name value="Organizationリソース　保険者情報"/>
+            <description value="保険者は、Coverageリソースのpayorから参照されるOrganizationリソースとして記録する。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Encounter"/>
+                <display value="Encounter"/>
+            </reference>
+            <name value="Encounterリソース　検診実施情報"/>
+            <description value="健診実施情報として、実施した健診の種別や健診実施機関の情報を記録する。同一受診日で複数の健診種類を受診した場合、Component.event要素、及び、Component.event.detailから参照されるEncounterリソースを複数記述し、複数のサービスコード（健診種類）の記述が可能である。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Observation"/>
+                <display value="Observation"/>
+            </reference>
+            <name value="Observationリソース　検査項目パターン情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Specimen"/>
+                <display value="Specimen"/>
+            </reference>
+            <name value="Specimenリソース　検体情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Media"/>
+                <display value="Media"/>
+            </reference>
+            <name value="Mediaリリース　画像情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-DocumentReference"/>
+                <display value="DocumentReference"/>
+            </reference>
+            <name value="DocumentReferenceリソース　添付文書情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-DiagnosticReport"/>
+                <display value="DiagnosticReport"/>
+            </reference>
+            <name value="DiagnosticReportリソース　検査報告書情報"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-Position"/>
+                <display value="Position"/>
+            </reference>
+            <name value="Position"/>
+            <description value="労働安全衛⽣法健診で、受信者の勤務先での役職を表現する拡張です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-InsuredPersonSymbol"/>
+                <display value="InsuredPersonSymbol"/>
+            </reference>
+            <name value="InsuredPersonSymbol"/>
+            <description value="被保険者証記号を格納する拡張です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="StructureDefinition/jp-eCheckup-InsuredPersonNumber"/>
+                <display value="InsuredPersonNumber"/>
+            </reference>
+            <name value="InsuredPersonNumber"/>
+            <description value="被保険者証番号を格納する拡張です。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DocumentType"/>
+                <display value="文書区分コード"/>
+            </reference>
+            <name value="文書区分コード"/>
+            <description value="文書種別を表すバリューセット。本文書が健診結果報告書であることを表す。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-CheckupReportCategory"/>
+                <display value="報告区分コード"/>
+            </reference>
+            <name value="報告区分コード"/>
+            <description value="健診結果が、どの健診事業として報告されるかを示す健診報告区分を表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-CheckupProgramServiceCode"/>
+                <display value="健診プログラムサービスコード"/>
+            </reference>
+            <name value="健診プログラムサービスコード"/>
+            <description value="実施した健診の種類を示す健診プログラムサービスコードを表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-SectionCode"/>
+                <display value="セクションコード"/>
+            </reference>
+            <name value="セクションコード"/>
+            <description value="本文書のセクションコードを表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-CheckupCardType"/>
+                <display value="券面種別コード"/>
+            </reference>
+            <name value="券面種別コード"/>
+            <description value="券面種別コードを表すバリューセット。受診券であることを示す。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-InsuranceType"/>
+                <display value="保険種別コード"/>
+            </reference>
+            <name value="保険種別コード"/>
+            <description value="保険種別コードを表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-SubscriberRelationship"/>
+                <display value="被保険者区分コード"/>
+            </reference>
+            <name value="被保険者区分コード"/>
+            <description value="被保険者区分を表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-EncounterCategory"/>
+                <display value="受診区分"/>
+            </reference>
+            <name value="受診区分"/>
+            <description value="受診種別を表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-JLAC10"/>
+                <display value="健診項目コード(JLAC10)"/>
+            </reference>
+            <name value="健診項目コード(JLAC10)"/>
+            <description value="健診結果報告書で使用するJLAC10コードのバリューセット"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-JLAC10Specimen"/>
+                <display value="材料コード"/>
+            </reference>
+            <name value="材料コード"/>
+            <description value="検体の材料コードを表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-AttachementFormat"/>
+                <display value="添付文書フォーマットコード"/>
+            </reference>
+            <name value="添付文書フォーマットコード"/>
+            <description value="添付文書のフォーマット（例：CDA R2形式）を示すバリューセット"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-ObservationCode"/>
+                <display value="追加健診項目コード"/>
+            </reference>
+            <name value="追加健診項目コード"/>
+            <description value="人間ドック関連追加項目コードを表すバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeNingendock2003"/>
+                <display value="判定区分（人間ドック学会2003）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2003）"/>
+            <description value="人間ドック学会判定区分2003年版に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeNingendock2008"/>
+                <display value="判定区分（人間ドック学会2008）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2008）"/>
+            <description value="人間ドック学会判定区分2008年版に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeNingendock2012"/>
+                <display value="判定区分（人間ドック学会2012）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2012）"/>
+            <description value="人間ドック学会判定区分2012年版に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeKyoukaikenpo"/>
+                <display value="判定区分（協会けんぽ）"/>
+            </reference>
+            <name value="判定区分（協会けんぽ）"/>
+            <description value="協会けんぽ判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCode-jpm"/>
+                <display value="判定区分（（財）日本予防医学協会）"/>
+            </reference>
+            <name value="判定区分（（財）日本予防医学協会）"/>
+            <description value="（財）日本予防医学協会判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeTypeA"/>
+                <display value="判定区分コードタイプA"/>
+            </reference>
+            <name value="判定区分コードタイプA"/>
+            <description value="その他の判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeTypeB"/>
+                <display value="判定区分コードタイプB"/>
+            </reference>
+            <name value="判定区分コードタイプB"/>
+            <description value="その他の判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeTypeC"/>
+                <display value="判定区分コードタイプC"/>
+            </reference>
+            <name value="判定区分コードタイプC"/>
+            <description value="その他の判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-DiagnosisCodeTypeD"/>
+                <display value="判定区分コードタイプD"/>
+            </reference>
+            <name value="判定区分コードタイプD"/>
+            <description value="その他の判定区分に対応する判定区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-ContactRelationship"/>
+                <display value="受診者追加情報種別コード"/>
+            </reference>
+            <name value="受診者追加情報種別コード"/>
+            <description value="受診者追加情報として組織との関係（勤務先／事業場）を示す区分のバリューセット。"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-ContactPointSystem"/>
+                <display value="連絡先種別"/>
+            </reference>
+            <name value="連絡先種別"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-ContactPointUse"/>
+                <display value="電話種別"/>
+            </reference>
+            <name value="電話種別"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-AdministrativeGender"/>
+                <display value="性別コード"/>
+            </reference>
+            <name value="性別コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-JapaneseYearConversion"/>
+                <display value="和暦西暦変換"/>
+            </reference>
+            <name value="和暦西暦変換"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-CompositionSectionList"/>
+                <display value="セクション一覧"/>
+            </reference>
+            <name value="セクション一覧"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-ScreeningItem"/>
+                <display value="説明ブロックの対象検診項目"/>
+            </reference>
+            <name value="説明ブロックの対象検診項目"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-InspectionGroupSpecification"/>
+                <display value="InspectionGroupSpecification"/>
+            </reference>
+            <name value="一連検査グループ仕様"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-TestResultItem"/>
+                <display value="検査結果項目パターン①②で指定するデータ"/>
+            </reference>
+            <name value="検査結果項目パターン①②で指定するデータ"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-PublishedCriteria"/>
+                <display value="PublishedCriteria"/>
+            </reference>
+            <name value="公開された判定基準"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-OhterAssesmentCategories"/>
+                <display value="その他の判定区分"/>
+            </reference>
+            <name value="その他の判定区分"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-InternationalUnitItemCode"/>
+                <display value="国際単位の項目コード"/>
+            </reference>
+            <name value="国際単位の項目コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="ValueSet/jp-eCheckup-XMLobservationCode"/>
+                <display value="XML検査方法コード"/>
+            </reference>
+            <name value="XML検査方法コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem1"/>
+                <display value="文書区分コード"/>
+            </reference>
+            <name value="文書区分コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem2"/>
+                <display value="報告区分コード"/>
+            </reference>
+            <name value="報告区分コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem3"/>
+                <display value="健診プログラムサービスコード"/>
+            </reference>
+            <name value="健診プログラムサービスコード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem4"/>
+                <display value="セクションコード"/>
+            </reference>
+            <name value="セクションコード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem5"/>
+                <display value="券面種別コード"/>
+            </reference>
+            <name value="券面種別コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem6"/>
+                <display value="保険種別コード"/>
+            </reference>
+            <name value="保険種別コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem7"/>
+                <display value="被保険者区分コード"/>
+            </reference>
+            <name value="被保険者区分コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem8"/>
+                <display value="受診区分"/>
+            </reference>
+            <name value="受診区分"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem9"/>
+                <display value="健診項目コード(JLAC10)"/>
+            </reference>
+            <name value="健診項目コード(JLAC10)"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem10"/>
+                <display value="材料コード"/>
+            </reference>
+            <name value="材料コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem11"/>
+                <display value="添付文書フォーマットコード"/>
+            </reference>
+            <name value="添付文書フォーマットコード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem12"/>
+                <display value="追加健診項目コード"/>
+            </reference>
+            <name value="追加健診項目コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem13"/>
+                <display value="判定区分（人間ドック学会2003）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2003）"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem14"/>
+                <display value="判定区分（人間ドック学会2008）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2008）"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem15"/>
+                <display value="判定区分（人間ドック学会2012）"/>
+            </reference>
+            <name value="判定区分（人間ドック学会2012）"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem16"/>
+                <display value="判定区分（協会けんぽ）"/>
+            </reference>
+            <name value="判定区分（協会けんぽ）"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem17"/>
+                <display value="判定区分（（財）日本予防医学協会）"/>
+            </reference>
+            <name value="判定区分（（財）日本予防医学協会）"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem18"/>
+                <display value="判定区分コードタイプA"/>
+            </reference>
+            <name value="判定区分コードタイプA"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem19"/>
+                <display value="判定区分コードタイプB"/>
+            </reference>
+            <name value="判定区分コードタイプB"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem20"/>
+                <display value="判定区分コードタイプC"/>
+            </reference>
+            <name value="判定区分コードタイプC"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem21"/>
+                <display value="判定区分コードタイプD"/>
+            </reference>
+            <name value="判定区分コードタイプD"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem22"/>
+                <display value="受診者追加情報種別コード"/>
+            </reference>
+            <name value="受診者追加情報種別コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem23"/>
+                <display value="連絡先種別"/>
+            </reference>
+            <name value="連絡先種別"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem24"/>
+                <display value="電話種別"/>
+            </reference>
+            <name value="電話種別"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem25"/>
+                <display value="性別コード"/>
+            </reference>
+            <name value="性別コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem26"/>
+                <display value="和暦西暦変換"/>
+            </reference>
+            <name value="和暦西暦変換"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem27"/>
+                <display value="セクション一覧"/>
+            </reference>
+            <name value="セクション一覧"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem28"/>
+                <display value="説明ブロックの対象検診項目"/>
+            </reference>
+            <name value="説明ブロックの対象検診項目"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem29"/>
+                <display value="一連検査グループ仕様"/>
+            </reference>
+            <name value="一連検査グループ仕様"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem30"/>
+                <display value="検査結果項目パターン①②で指定するデータ"/>
+            </reference>
+            <name value="検査結果項目パターン①②で指定するデータ"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem31"/>
+                <display value="公開された判定基準"/>
+            </reference>
+            <name value="公開された判定基準"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem32"/>
+                <display value="その他の判定区分"/>
+            </reference>
+            <name value="その他の判定区分"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem33"/>
+                <display value="国際単位の項目コード"/>
+            </reference>
+            <name value="国際単位の項目コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="CodeSystem/CodeSystem34"/>
+                <display value="XML検査方法コード"/>
+            </reference>
+            <name value="XML検査方法コード"/>
+            <exampleBoolean value="false"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/jp-eCheckup-PatientSS"/></reference>
+            <name value="Patientリソース　受診者情報記述例"/>
+            <description value="受診者情報を表すサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="PractitionerRole/jp-eCheckup-PractitionerRoleSS"/></reference>
+            <name value="PractitionerRoleリソース　検診結果報告書の作成者役割情報記述例"/>
+            <description value="健診結果報告書の作成者役割情報を表すサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/jp-eCheckup-OrganizationSS"/>
+                <display value="厚生労働省第一病院"/>
+            </reference>
+            <name value="Organizationリソース　検診結果報告書の作成組織情報記述例"/>
+            <description value="健診結果報告書の作成組織情報を表すサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/jp-eCheckup-PractitionerSS"/></reference>
+            <name value="Practitionerリソース　検診結果報告書の作成者情報記述例"/>
+            <description value="健診結果報告書の作成者情報を表すサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Practitoner.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Coverage/jp-eCheckup-CoverageSS"/></reference>
+            <name value="Coverageリソース　受診券記述例"/>
+            <description value="受診券を表すCoverageリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Coverage/jp-eCheckup-Coverage2SS"/></reference>
+            <name value="Coverageリソース　保険証情報記述例"/>
+            <description value="保険証情報を表すCoverageリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage2.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Organization/jp-eCheckup-Organization2SS"/>
+                <display value="サンプル健康保険組合"/>
+            </reference>
+            <name value="Organizationリソース　保険者情報記述例"/>
+            <description value="保険者情報を表すOrganizationリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization2.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Encounter/jp-eCheckup-EncounterSS"/></reference>
+            <name value="Encounterリソース　検診実施情報記述例"/>
+            <description value="健診実施情報を表すEncounterリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Encounter.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-ObservationSS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－１"/>
+            <description value="検査結果セクションパターン①のObservationリソースのサンプルインスタンス。&#xA;• 検査項目：中性脂肪 項目コード＝&quot;3F015000002327101&quot;、測定値&#xA;=100mg/dL&#xA;• 基準値＝下限50、上限150&#xA;• 測定方法＝可視吸光光度法（酵素比色法・グリセロール消去）検査法コー&#xA;ド 3F01510000&#xA;• 結果解釈コード＝&quot;N&quot;"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Specimen/jp-eCheckup-SpecimenSS"/></reference>
+            <name value="Specimenリソース　検体情報記述例"/>
+            <description value="検査結果セクションパターン①のObservationリソースから参照される検体情報を表すSpecimenリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation2SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－２"/>
+            <description value="検査結果セクションパターン①－２のObservationリソースのサンプルインスタンス。&#xA;「易疲労感の訴えあり」という理由で医師の判断により貧血検査セットとして、血色素量と赤血球数が実施された場合のサンプル。一連検査グループの記述例。&#xA;• 検査項目１：血色素量 項目コード＝&quot;2A030000001930101&quot; 測定値＝15.0mg/dL&#xA;• 基準値：下限 12.5 上限 15.9 結果解釈コード＝&quot;N&quot;&#xA;• 検査項目２：赤血球数 項目コード＝&quot;2A020000001930101&quot; 測定値＝500 万/mm3&#xA;• 基準値：下限 427 上限 570 結果解釈コード＝&quot;N&quot;&#xA;• 検査理由：項目コード＝&quot;2A020000001930149&quot; 易疲労感の訴えあり ST 型（文字列型）"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation2-1SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－２－１"/>
+            <description value="検査結果セクションパターン①－２のObservationリソースから参照される個々のObservationリソースのサンプル(検査項目1)。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation2-2SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－２－２"/>
+            <description value="検査結果セクションパターン①－２のObservationリソースから参照される個々のObservationリソースのサンプル(検査項目2)。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation2-3SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－２－３"/>
+            <description value="検査結果セクションパターン①－２のObservationリソースから参照される個々のObservationリソースのサンプル(検査理由)。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation3SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン①－３"/>
+            <description value="検査結果セクションパターン①－３のObservationリソースのサンプルインスタンス。&#xA;測定値が入力最大値を超えた例。&#xA;• 検査項目：中性脂肪 項目コード＝&quot;3F015000002327101&quot;、測定値&#xA;=2000mg/dL&#xA;• 基準値＝下限50、上限150&#xA;• 測定方法＝可視吸光光度法（酵素比色法・グリセロール消去）検査法コード 3F01510000&#xA;• 結果解釈コード＝&quot;HX&quot;"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation4SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン②－１"/>
+            <description value="検査結果セクションパターン②－１のObservationリソースのサンプルインスタンス。&#xA;• 検査項目：眼底検査（キースワグナー分類） 表示名＝&quot;眼底検査ＫＷ分類&quot;&#xA;• 測定値：分類Ｉ（コード値＝2）&#xA;• データ型：CO 型 （CodeableConcept 型にordinalValue 拡張を使用）&#xA;• 眼底検査（キースワグナー分類）コード表のOID＝1.2.392.200119.6.2110"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation5SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン②－２"/>
+            <description value="検査結果セクションパターン②－２のObservationリソースのサンプルインスタンス。&#xA;• 検査項目：他覚症状所見 表示名＝&quot;他覚所見&quot;&#xA;• 結果値：&quot;胸部くも状血管あり&quot;&#xA;• データ型：ST（string 型）"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation6SS"/></reference>
+            <name value="Observationリソース　エントリ仕様パターン②－３"/>
+            <description value="検査結果セクションパターン②－３のObservationリソースのサンプルインスタンス。&#xA;• 検査項目：医師の判断（運動指導必要）および、判断した医師名（田中太郎）"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Practitioner/jp-eCheckup-Practitioner2SS"/></reference>
+            <name value="Practitionerリソース　医師の診断記述例"/>
+            <description value="検査結果セクションパターン②－３のObservationリソースのperformerから参照され、医師の診断の診断者の医師を表すPractitionerリソースのサンプル。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Practitoner.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation7SS"/></reference>
+            <name value="Observationリソース　検査未実施のサンプル"/>
+            <description value="検査未実施を表すObservationリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation8SS"/></reference>
+            <name value="Observationリソース　測定不能の記述例①"/>
+            <description value="測定不能を表すObservationリソースのうち、基準値や検査手法コードを記述したサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation9SS"/></reference>
+            <name value="Observationリソース　測定不能の記述例②"/>
+            <description value="測定不能を表すObservationリソースのうち、基準値や検査手法コードを省略したサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Observation/jp-eCheckup-Observation10SS"/></reference>
+            <name value="Observationリソース　画像参照記述例"/>
+            <description value="DICOM画像が添付された検診結果を表すObservationリソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Media/jp-eCheckup-MediaSS"/></reference>
+            <name value="Mediaリソース　参照される画像記述例"/>
+            <description value="DICOM画像が添付された検診結果を表すObservationリソースのObservation.deriverFromから参照される画像(Media)リソースのサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Media.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DocumentReference/jp-eCheckup-DocumentReferenceSS"/></reference>
+            <name value="DocumentReferenceリソース　添付文書記述例"/>
+            <description value="測定不能を表すObservationリソースのうち、基準値や検査手法コードを記述したサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DocumentReference.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="DiagnosticReport/jp-eCheckup-DiagnosticReportSS"/></reference>
+            <name value="DiagnosticReportリソース　画像参照記述例"/>
+            <description value="DICOM画像が添付された画像検査報告書のサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DiagnosticReport.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Patient/jp-eCheckup-Patient2SS"/></reference>
+            <name value="Patientリソース　受診者追加情報記述例"/>
+            <description value="労働安全衛生法検診で使用する、受診者追加情報のサンプルインスタンス。"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/jp-eCheckup-BundleSS"/></reference>
+            <name value="Bundleリソース　特定検診記述例1"/>
+            <description value="特定健診の結果を、FHIR Documentで構造化して記述したサンプルインスタンス。&#xA;&#xA;|No|項目||設定値||&#xA;|---|---|---|---|---|&#xA;|1|報告区分||10:特定健診||&#xA;|2|健診プログラムサービスコード||010：特定健診||&#xA;|3|受診日||2020年10月1日||&#xA;|4|受診者|氏名|健診太郎||&#xA;|5||カナ氏名|ケンシンタロウ||&#xA;|6||生年月日|1950年5月4日||&#xA;|7||性別|男性||&#xA;|8||住所|123-4567 神奈川県横浜市港区１－２－３||&#xA;|9||電話番号|03-1111-2222（自宅）||&#xA;|10|健診実施機関|名称|厚生労働省第一病院||&#xA;|11||機関番号|1311234567||&#xA;|12||所在地|〒100-0001 東京都千代田区千代田９－９－９||&#xA;|13||電話番号|0123-456-7890||&#xA;|14|健診実施者|氏名|東京太郎||&#xA;|15||カナ氏名|トウキョウタロウ||&#xA;|16|受診券情報|受診券整理番号|20100000123||&#xA;|17||有効期限|2020年4月1日～2021年3月31日||&#xA;|18||発行者|サンプル健康保険組合||&#xA;|19|健診セクション|身長|項目コード|9N001000000000001|&#xA;|20|||結果値|162.3|&#xA;|21|||単位|cm|&#xA;|22||体重|項目コード|9N006000000000001|&#xA;|23|||結果値|65.5|&#xA;|24|||単位|kg|&#xA;|25||BMI|項目コード|9N011000000000001|&#xA;|26|||結果値|24.9|&#xA;|27|||単位|kg/m2|&#xA;|28||腹囲|項目コード|9N016160100000001|&#xA;|29|||結果値|70|&#xA;|30|||単位|cm|&#xA;|31|||測定方法|1 回目|&#xA;|32||既往歴|項目コード|9N056000000000011|&#xA;|33|||結果値|1:特記事項有り|&#xA;|34||具体的な既往歴|項目コード|9N056160400000049|&#xA;|35|||結果値|ヘルニア、膀胱炎|&#xA;|36||自覚症状|項目コード|9N061000000000011|&#xA;|37|||結果値|1:特記事項有り|&#xA;|38||自覚症状所見|項目コード|9N061160800000049|&#xA;|39|||結果値|胃痛|&#xA;|40||他覚症状|項目コード|9N066000000000011|&#xA;|41|||結果値|2:特記事項無し|&#xA;|42||収縮期血圧（１回目）|項目コード|9A751000000000001|&#xA;|43|||結果値|149|&#xA;|44|||単位|mmHg|&#xA;|45|||結果解釈コード|N|&#xA;|46|||測定方法|1 回目|&#xA;|47|||基準値下限|80 mmHg|&#xA;|48|||基準値上限|130 mmHg|&#xA;|49||拡張期血圧（１回目）|項目コード|9A761000000000001|&#xA;|50|||結果値|90|&#xA;|51|||単位|mmHg|&#xA;|52|||結果解釈コード|N|&#xA;|53|||測定方法|1 回目|&#xA;|54|||基準値下限|40 mmHg|&#xA;|55|||基準値上限|80 mmHg|&#xA;|56||中性脂肪|項目コード|3F015000002327101|&#xA;|57|||結果値|60|&#xA;|58|||単位|mg/dl|&#xA;|59|||結果解釈コード|N|&#xA;|60|||測定方法|可視吸光光度法（酵素比色法・グリセロール消去）|&#xA;|61|||基準値下限|50 mmHg|&#xA;|62|||基準値上限|149 mmHg|&#xA;|63||ＨＤＬコレステロール|項目コード|3F070000002327101|&#xA;|64|||結果値|45|&#xA;|65|||単位|mg/dl|&#xA;|66|||結果解釈コード|N|&#xA;|67|||測定方法|可視吸光光度法（直接法（非沈殿法））|&#xA;|68|||基準値下限|40 mg/dl|&#xA;|69|||基準値上限|96 mg/dl|&#xA;|70||ＬＤＬコレステロール|項目コード|3F077000002327101|&#xA;|71|||結果値|88|&#xA;|72|||単位|mg/dl|&#xA;|73|||結果解釈コード|N|&#xA;|74|||測定方法|可視吸光光度法（直接法（非沈殿法））|&#xA;|75|||基準値下限|70 mg/dl|&#xA;|76|||基準値上限|140 mg/dl|&#xA;|77||ＧＯＴ（ＡＳＴ）|項目コード|3B035000002327201|&#xA;|78|||結果値|32|&#xA;|79|||単位|U/l|&#xA;|80|||結果解釈コード|N|&#xA;|81|||測定方法|紫外吸光光度法（JSCC 標準化対応法）|&#xA;|82|||基準値下限|10 U/l|&#xA;|83|||基準値上限|40 U/l|&#xA;|84||ＧＰＴ（ＡＬＴ）|項目コード|3B045000002327201|&#xA;|85|||結果値|16|&#xA;|86|||単位|U/l|&#xA;|87|||結果解釈コード|N|&#xA;|88|||測定方法|紫外吸光光度法（JSCC 標準化対応法）|&#xA;|89|||基準値下限|5 U/l|&#xA;|90|||基準値上限|30 U/l|&#xA;|91||γ－ＧＴ（γ－ＧＴＰ）|項目コード|3B090000002327101|&#xA;|92|||結果値|55|&#xA;|93|||単位|U/l|&#xA;|94|||結果解釈コード|N|&#xA;|95|||測定方法|可視吸光光度法（JSCC 標準化対応法）|&#xA;|96|||基準値下限|0 U/l|&#xA;|97|||基準値上限|30 U/l|&#xA;|98||ＨｂＡ１ｃ（ＮＧＳＰ）|項目コード|3D046000001906202|&#xA;|99|||結果値|7|&#xA;|100|||単位|%|&#xA;|101|||結果解釈コード|N|&#xA;|102|||測定方法|免疫学的方法（ラテックス凝集比濁法等）|&#xA;|103|||基準値下限|4.3 %|&#xA;|104|||基準値上限|5.8 %|&#xA;|105||採血時間（食後）|項目コード|9N141000000000011|&#xA;|106|||結果値|2：食後１０時間以上|&#xA;|107||尿糖|項目コード|1A020000000191111|&#xA;|108|||結果値|1：－|&#xA;|109||尿蛋白|項目コード|1A010000000191111|&#xA;|110|||結果値|1：－|&#xA;|111||メタボリックシンドローム判定|項目コード|9N501000000000011|&#xA;|112|||結果値|3：非該当|&#xA;|113||保健指導レベル|項目コード|9N506000000000011|&#xA;|114|||結果値|3：なし|&#xA;|115||医師の診断（判定）|項目コード|9N511000000000049|&#xA;|116|||結果値|肝機能がわずかに異常ですが支障はないと思われます。|&#xA;|117|問診セクション|服薬１（血圧）|項目コード|9N701000000000011|&#xA;|118|||結果値|2：いいえ|&#xA;|119||服薬２（血糖）|項目コード|9N706000000000011|&#xA;|120|||結果値|2：いいえ|&#xA;|121||服薬３（脂質）|項目コード|9N711000000000011|&#xA;|122|||結果値|2：いいえ|&#xA;|123||喫煙|項目コード|9N736000000000011|&#xA;|124|||結果値|2：いいえ|&#xA;|125||既往歴１（脳血管）|項目コード|9N716000000000011|&#xA;|126|||結果値|2：いいえ|&#xA;|127||既往歴２（心血管）|項目コード|9N721000000000011|&#xA;|128|||結果値|2：いいえ|&#xA;|129||既往歴３（腎不全・人工透析）|項目コード|9N726000000000011|&#xA;|130|||結果値|2：いいえ|&#xA;|131||貧血|項目コード|9N731000000000011|&#xA;|132|||結果値|2：いいえ|&#xA;|133||２０歳からの体重変化|項目コード|9N741000000000011|&#xA;|134|||結果値|2：いいえ|&#xA;|135||３０分以上の運動習慣|項目コード|9N746000000000011|&#xA;|136|||結果値|2：いいえ|&#xA;|137||歩行又は身体活動|項目コード|9N751000000000011|&#xA;|138|||結果値|2：いいえ|&#xA;|139||歩行速度|項目コード|9N756000000000011|&#xA;|140|||結果値|2：いいえ|&#xA;|141||咀嚼|項目コード|9N872000000000011|&#xA;|142|||結果値|1：何でもかんで食べることができる|&#xA;|143||食べ方1（早食い等）|項目コード|9N766000000000011|&#xA;|144|||結果値|1：速い|&#xA;|145||食べ方２（就寝前）|項目コード|9N771000000000011|&#xA;|146|||結果値|1：はい|&#xA;|147||食べ方３（間食）|項目コード|9N782000000000011|&#xA;|148|||結果値|2：時々|&#xA;|149||食習慣|項目コード|9N781000000000011|&#xA;|150|||結果値|1：はい|&#xA;|151||飲酒|項目コード|9N786000000000011|&#xA;|152|||結果値|3：ほとんど飲まない|&#xA;|153||飲酒量|項目コード|9N791000000000011|&#xA;|154|||結果値|1：１合未満|&#xA;|155||睡眠|項目コード|9N796000000000011|&#xA;|156|||結果値|2：いいえ|&#xA;|157||生活習慣の改善|項目コード|9N801000000000011|&#xA;|158|||結果値|1：意思なし|&#xA;|159||保健指導の希望|項目コード|9N806000000000011|&#xA;|160|||結果値|2：いいえ|"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/jp-eCheckup-Bundle2SS"/></reference>
+            <name value="Bundleリソース　特定検診記述例2"/>
+            <description value="添付資料セクションに、CDA R2型式の特定健診情報ファイルを添付したサンプルインスタンス。&#xA;&#xA;|No|項目||設定値|&#xA;|---|---|---|---|&#xA;|1|報告区分||10:特定健診|&#xA;|2|健診プログラムサービスコード||010：特定健診|&#xA;|3|受診日||2020年10月1日|&#xA;|4|受診者|氏名|健診太郎|&#xA;|5||カナ氏名|ケンシンタロウ|&#xA;|6||生年月日|1950年5月4日|&#xA;|7||性別|男性|&#xA;|8||住所|123-4567 神奈川県横浜市港区１－２－３|&#xA;|9||電話番号|03-1111-2222（自宅）|&#xA;|10|健診実施機関|名称|厚生労働省第一病院|&#xA;|11||機関番号|1311234567|&#xA;|12||所在地|〒100-0001 東京都千代田区千代田９－９－９|&#xA;|13||電話番号|0123-456-7890|&#xA;|14|健診実施者|氏名|東京太郎|&#xA;|15||カナ氏名|トウキョウタロウ|&#xA;|16|添付ファイル|説明|特定健診情報ファイル|&#xA;|17||コンテントタイプ|text/xml|&#xA;|18||フォーマット|CDA R2 (特定健診)|"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html"/>
+        </resource>
+        <resource>
+            <reference>
+                <reference value="Bundle/jp-eCheckup-Bundle3SS"/></reference>
+            <name value="Bundleリソース　安衛法検診記述例"/>
+            <description value="労働安全衛生法検診の結果をFHIR Documentで記述したサンプルインスタンス。&#xA;&#xA;|No|項目||設定値||&#xA;|---|---|---|---|---|&#xA;|1|報告区分||40:事業者健診||&#xA;|2|健診プログラムサービスコード||030：事業者健診||&#xA;|3|受診日||2020年10月1日||&#xA;|4|受診者|氏名|健診花子||&#xA;|5||カナ氏名|ケンシンハナコ||&#xA;|6||生年月日|1960年8月3日||&#xA;|7||性別|女性||&#xA;|8||住所|123-4567 神奈川県横浜市港区１－２－３||&#xA;|9||電話番号|03-1111-2222（自宅）||&#xA;|10||勤務先名|サンプル株式会社||&#xA;|11||勤務先所属|営業部||&#xA;|12||役職|課長||&#xA;|13||雇入年月日|2010年4月1日||&#xA;|14|健診実施機関|名称|厚生労働省第一病院||&#xA;|15||機関番号|1311234567||&#xA;|16||所在地|〒100-0001 東京都千代田区千代田９－９－９||&#xA;|17||電話番号|0123-456-7890||&#xA;|18|健診実施者|氏名|東京太郎||&#xA;|19||カナ氏名|トウキョウタロウ||&#xA;|20|健診セクション|身長|項目コード|9N001000000000001|&#xA;|21|||結果値|148.4|&#xA;|22|||単位|cm|&#xA;|23||体重|項目コード|9N006000000000001|&#xA;|24|||結果値|45.5|&#xA;|25|||単位|kg|&#xA;|26||BMI|項目コード|9N011000000000001|&#xA;|27|||結果値|20.7|&#xA;|28|||単位|kg/m2|&#xA;|29||腹囲|項目コード|9N016160100000001|&#xA;|30|||結果値|58|&#xA;|31|||単位|cm|&#xA;|32|||測定方法|1 回目|&#xA;|33||業務歴|項目コード|9N051000000000049|&#xA;|34|||結果値|特記なし|&#xA;|35||既往歴|項目コード|9N056000000000011|&#xA;|36|||結果値|1:特記事項有り|&#xA;|37||具体的な既往歴|項目コード|9N056160400000049|&#xA;|38|||結果値|ヘルニア、膀胱炎|&#xA;|39||自覚症状|項目コード|9N061000000000011|&#xA;|40|||結果値|1:特記事項有り|&#xA;|41||自覚症状所見|項目コード|9N061160800000049|&#xA;|42|||結果値|胃痛|&#xA;|43||他覚症状|項目コード|9N066000000000011|&#xA;|44||結果値|2:特記事項無し||&#xA;|45||収縮期血圧（１回目）|項目コード|9A751000000000001|&#xA;|46|||結果値|149|&#xA;|47|||単位|mmHg|&#xA;|48|||結果解釈コード|N|&#xA;|49|||測定方法|1 回目|&#xA;|50|||基準値下限|80 mmHg|&#xA;|51|||基準値上限|130 mmHg|&#xA;|52||拡張期血圧（１回目）|項目コード|9A761000000000001|&#xA;|53|||結果値|90|&#xA;|54|||単位|mmHg|&#xA;|55|||結果解釈コード|N|&#xA;|56|||測定方法|1 回目|&#xA;|57|||基準値下限|40 mmHg|&#xA;|58|||基準値上限|80 mmHg|&#xA;|59||中性脂肪|項目コード|3F015000002327101|&#xA;|60|||結果値|128|&#xA;|61|||単位|mg/dl|&#xA;|62|||結果解釈コード|N|&#xA;|63|||測定方法|可視吸光光度法（酵素比色法・グリセロール消去）|&#xA;|64|||基準値下限|50 mmHg|&#xA;|65|||基準値上限|149 mmHg|&#xA;|66||ＨＤＬコレステロール|項目コード|3F070000002327101|&#xA;|67|||結果値|45|&#xA;|68|||単位|mg/dl|&#xA;|69|||結果解釈コード|N|&#xA;|70|||測定方法|可視吸光光度法（直接法（非沈殿法））|&#xA;|71|||基準値下限|40 mg/dl|&#xA;|72|||基準値上限|96 mg/dl|&#xA;|73||ＬＤＬコレステロール|項目コード|3F077000002327101|&#xA;|74|||結果値|88|&#xA;|75|||単位|mg/dl|&#xA;|76|||結果解釈コード|N|&#xA;|77|||測定方法|可視吸光光度法（直接法（非沈殿法））|&#xA;|78|||基準値下限|70 mg/dl|&#xA;|79|||基準値上限|140 mg/dl|&#xA;|80||ＧＯＴ（ＡＳＴ）|項目コード|3B035000002327201|&#xA;|81|||結果値|32|&#xA;|82|||単位|U/l|&#xA;|83|||結果解釈コード|N|&#xA;|84|||測定方法|紫外吸光光度法（JSCC 標準化対応法）|&#xA;|85|||基準値下限|10 U/l|&#xA;|86|||基準値上限|40 U/l|&#xA;|87||ＧＰＴ（ＡＬＴ）|項目コード|3B045000002327201|&#xA;|88|||結果値|16|&#xA;|89|||単位|U/l|&#xA;|90|||結果解釈コード|N|&#xA;|91|||測定方法|紫外吸光光度法（JSCC 標準化対応法）|&#xA;|92|||基準値下限|5 U/l|&#xA;|93|||基準値上限|30 U/l|&#xA;|94||γ－ＧＴ（γ－ＧＴＰ）|項目コード|3B090000002327101|&#xA;|95|||結果値|55|&#xA;|96|||単位|U/l|&#xA;|97|||結果解釈コード|N|&#xA;|98|||測定方法|可視吸光光度法（JSCC 標準化対応法）|&#xA;|99|||基準値下限|0 U/l|&#xA;|100|||基準値上限|30 U/l|&#xA;|101||空腹時血糖|項目コード|3D046000001906202|&#xA;|102|||結果値|98|&#xA;|103|||単位|mg/dl|&#xA;|104|||結果解釈コード|N|&#xA;|105|||測定方法|電位差法（ブドウ糖酸化酵素電極法）|&#xA;|106|||基準値上限|99 mg/dl|&#xA;|107||採血時間（食後）|項目コード|9N141000000000011|&#xA;|108|||結果値|2：食後１０時間以上|&#xA;|109||尿糖|項目コード|1A020000000191111|&#xA;|110|||結果値|1：－|&#xA;|111||尿蛋白|項目コード|1A010000000191111|&#xA;|112|||結果値|1：－|&#xA;|113||血色素量|項目コード|2A030000001930101|&#xA;|114|||結果値|15|&#xA;|115|||単位|g/dl|&#xA;|116|||基準値下限|12.1 g/dl|&#xA;|117|||基準値上限|14.5g/dl|&#xA;|118||赤血球数|項目コード|1A010000000191111|&#xA;|119|||結果値|500|&#xA;|120|||単位|10*4 /mm3|&#xA;|121|||基準値下限|353 10*4/mm3|&#xA;|122|||基準値上限|454 10*4/mm3|&#xA;|123||心電図（所見の有無）|項目コード|9A110160700000011|&#xA;|124|||結果値|1:特記事項有り|&#xA;|125||心電図（所見）|項目コード|9A110160800000049|&#xA;|126|||結果値|ＱＴ延長|&#xA;|127||胸部エックス線検査（一般：直接撮影）（所見の有無）|項目コード|9N206160700000011|&#xA;|128|||結果値|1:特記事項有り|&#xA;|129||胸部エックス線検査（一般：直接撮影）（所見）|項目コード|9N206160800000049|&#xA;|130|||結果値|石灰化陰影|&#xA;|131||視力（右）|項目コード|9E160162100000001|&#xA;|132|||結果値|1.0|&#xA;|133||視力（左）|項目コード|9E160162200000001|&#xA;|134|||結果値|0.8|&#xA;|135||聴力（右、１０００Ｈｚ）|項目コード|9D100163100000011|&#xA;|136|||結果値|2:異常所見無し|&#xA;|137||聴力（右、４０００Ｈｚ）|項目コード|9D100163200000011|&#xA;|138|||結果値|2:異常所見無し|&#xA;|139||聴力（左、１０００Ｈｚ）|項目コード|9D100163500000011|&#xA;|140|||結果値|2:異常所見無し|&#xA;|141||聴力（左、４０００Ｈｚ）|項目コード|9D100163600000011|&#xA;|142|||結果値|2:異常所見無し|&#xA;|143||医師の診断（判定）|項目コード|9N511000000000049|&#xA;|144|||結果値|肝機能がわずかに異常ですが支障はないと思われます。|&#xA;|145||医師の意見|項目コード|9N511000000000049|&#xA;|146|||結果値|肝機能がわずかに異常ですが支障はないと思われます。|&#xA;|147|問診セクション|服薬１（血圧）|項目コード|9N701000000000011|&#xA;|148|||結果値|2：いいえ|&#xA;|149||服薬２（血糖）|項目コード|9N706000000000011|&#xA;|150|||結果値|2：いいえ|&#xA;|151||服薬３（脂質）|項目コード|9N711000000000011|&#xA;|152|||結果値|2：いいえ|&#xA;|153||喫煙|項目コード|9N736000000000011|&#xA;|154|||結果値|2：いいえ|"/>
+            <exampleBoolean value="false"/>
+            <exampleCanonical value="https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html"/>
+        </resource>
+        <page>
+            <nameUrl value="index.html"/>
+            <title value="Home Page"/>
+            <generation value="markdown"/>
+            <page>
+                <nameUrl value="summary.html"/>
+                <title value="概要"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="usecase.html"/>
+                <title value="ユースケース"/>
+                <generation value="markdown"/>
+            </page>
+            <page>
+                <nameUrl value="guidance.html"/>
+                <title value="ガイダンス"/>
+                <generation value="markdown"/>
+                <page>
+                    <nameUrl value="structure.html"/>
+                    <title value="文書構造と健康診断結果報告書の識別"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="descriptionStandard.html"/>
+                    <title value="記述規格"/>
+                    <generation value="markdown"/>
+                </page>
+                <page>
+                    <nameUrl value="namespace.html"/>
+                    <title value="名前空間と識別ID"/>
+                    <generation value="markdown"/>
+                </page>
+            </page>
+        </page>
+        <parameter>
+            <code value="copyrightyear"/>
+            <value value="2020+"/>
+        </parameter>
+        <parameter>
+            <code value="releaselabel"/>
+            <value value="CI Build"/>
+        </parameter>
+    </definition>
+</ImplementationGuide>

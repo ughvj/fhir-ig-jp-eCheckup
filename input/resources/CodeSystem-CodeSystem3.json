@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem3",
+  "id": "CodeSystem3",
+  "title": "健診プログラムサービスコード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem3.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-01T07:34:32.042+00:00",
+    "source": "#Umf1sQsHdfXVryqL"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1002"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupProgramServiceCode.html"
+}

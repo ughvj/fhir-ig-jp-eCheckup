@@ -1,0 +1,614 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-Bundle",
+  "meta": {
+    "versionId": "130",
+    "lastUpdated": "2021-07-02T10:34:19.038+00:00",
+    "source": "#8n2mYCvSukPK9tb4"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Other"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html",
+  "version": "0.5.0",
+  "name": "Bundle",
+  "title": "Bundleリソース　文書情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "description": "管理的な情報を格納する要素として identifier, timestamp, signature などがあり、文書自体の内容情報を格納する要素としてひとつのentry要素がある。このentry要素の値として、複数のresource要素を含むブロックが繰り返される。各リソースは、他のリソースから参照する際に使用するUUID（一意となる値を自動発番する）を持つfullUrl要素を持つ。参照時にはReference型のreference要素に、このUUIDを指定する。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "Bundleリソースであることを示す"
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "short": "本文書のプロファイルを識別するURLを指定する。値は例示である。今後決定されるURLを指定すること。",
+        "min": 1,
+        "max": "1",
+        "example": [
+          {
+            "label": "for canonical",
+            "valueString": "http://jpfhir.jp/fhir/eCheckup/StructureDefinition/eCheckup-Bundle/1.0"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "short": "Bundleリソースがドキュメントタイプであることをしめす。",
+        "fixedCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "short": "このリソースを生成した日時。時刻の精度はミリ秒とし、タイムゾーンを含めること。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for instant",
+            "valueInstant": "2020-08-21T03:12:21.123+00:00"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "profile",
+              "path": "resource"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 6,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:1",
+        "path": "Bundle.entry",
+        "sliceName": "1",
+        "short": "構成リソース一覧目次に相当。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:1.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:180f219f-97a8-486d-99d9-ed631fe4fc57"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:1.resource",
+        "path": "Bundle.entry.resource",
+        "short": "文書構成情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Composition"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:2",
+        "path": "Bundle.entry",
+        "sliceName": "2",
+        "short": "受診者情報エントリ",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:2.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:2.resource",
+        "path": "Bundle.entry.resource",
+        "short": "受診者情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Patient",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:3",
+        "path": "Bundle.entry",
+        "sliceName": "3",
+        "short": "健診結果作成者役割情報エントリ",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:3.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:3.resource",
+        "path": "Bundle.entry.resource",
+        "short": "健診結果作成者役割情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "PractitionerRole",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:4",
+        "path": "Bundle.entry",
+        "sliceName": "4",
+        "short": "健診結果作成組織情報エントリ",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:4.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:5c9f9f7f-e546-04c2-6888-a9e0b24e5720"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:4.resource",
+        "path": "Bundle.entry.resource",
+        "short": "健診結果作成組織情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Organization",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:5",
+        "path": "Bundle.entry",
+        "sliceName": "5",
+        "short": "健診結果作成者情報エントリ",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:5.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:2d5a292d-169a-5cc4-0e10-7a1c0d3fcb2b"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:5.resource",
+        "path": "Bundle.entry.resource",
+        "short": "健診結果作成者情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Practitioner",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Practitoner.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:6",
+        "path": "Bundle.entry",
+        "sliceName": "6",
+        "short": "健診実施情報エントリ",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:6.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:1af0a9a6-a91d-8aef-d14e-069795b89c9f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:6.resource",
+        "path": "Bundle.entry.resource",
+        "short": "健診実施情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Encounter",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Encounter.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:7",
+        "path": "Bundle.entry",
+        "sliceName": "7",
+        "short": "受診券情報エントリ",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:7.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:1af0a9a6-a91d-8aef-d14e-069795b89c9f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:7.resource",
+        "path": "Bundle.entry.resource",
+        "short": "受診券情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:8",
+        "path": "Bundle.entry",
+        "sliceName": "8",
+        "short": "保険情報エントリ",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:8.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:1af0a9a6-a91d-8aef-d14e-069795b89c9f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:8.resource",
+        "path": "Bundle.entry.resource",
+        "short": "保険・自費情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Coverage",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage2.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:9",
+        "path": "Bundle.entry",
+        "sliceName": "9",
+        "short": "健診項目情報エントリ",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:9.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:9d543094-213f-5b40-c28e-35f0bc1cb1df"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:9.resource",
+        "path": "Bundle.entry.resource",
+        "short": "健診項目情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Observation",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:10",
+        "path": "Bundle.entry",
+        "sliceName": "10",
+        "short": "検体情報エントリ",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:10.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:75cec9fb-9a82-68e7-f27a-4306b744e3c2"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:10.resource",
+        "path": "Bundle.entry.resource",
+        "short": "検体情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "Specimen",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:11",
+        "path": "Bundle.entry",
+        "sliceName": "11",
+        "short": "健診結果画像情報エントリ",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:11.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:bdd60110-fd63-bd9e-e289-98de10c2a0c7"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:11.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "DiagnosticReport",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DiagnosticReport.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:12",
+        "path": "Bundle.entry",
+        "sliceName": "12",
+        "short": "健診結果画像報告書エントリ",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:12.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:673f8db5-0ffd-4395-9657-6da00420bbc3"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:12.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "type": [
+          {
+            "code": "Media",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Media.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:13",
+        "path": "Bundle.entry",
+        "sliceName": "13",
+        "short": "添付文書エントリ",
+        "min": 0,
+        "max": "*",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:13.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "short": "エントリリスト内のリソースを一意に識別するためのUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "urn:uuid:05f5ce7d-3ad7-39b4-4ab5-6dc99dd51922"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry:13.resource",
+        "path": "Bundle.entry.resource",
+        "short": "添付文書情報",
+        "min": 1,
+        "type": [
+          {
+            "code": "DocumentReference",
+            "profile": [
+              "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DocumentReference.html"
+            ]
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

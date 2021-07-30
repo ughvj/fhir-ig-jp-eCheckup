@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "diagnosisCode-kyoukaikenpo",
+  "id": "jp-eCheckup-DiagnosisCodeKyoukaikenpo",
+  "title": "判定区分（協会けんぽ）",
+  "description": "協会けんぽ判定区分に対応する判定区分のバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-kyoukaikenpo.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:58:11.646+00:00",
+    "source": "#S4QAD2q0djWbNMWF"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem16.html"
+      }
+    ]
+  }
+}

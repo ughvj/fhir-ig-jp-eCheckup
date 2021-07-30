@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "InspectionGroupSpecification",
+  "id": "jp-eCheckup-InspectionGroupSpecification",
+  "title": "一連検査グループ仕様",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-InspectionGroupSpecification.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-01T07:53:07.774+00:00",
+    "source": "#myoCPRQtyHUVwVuw"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem29.html"
+      }
+    ]
+  }
+}

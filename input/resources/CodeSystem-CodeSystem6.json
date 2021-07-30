@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem6",
+  "id": "CodeSystem6",
+  "title": "保険種別コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem6.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:36:08.876+00:00",
+    "source": "#5XAeV9ilvyv0vgu0"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:1.2.392.100495.20.2.61"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-insuranceType.html"
+}

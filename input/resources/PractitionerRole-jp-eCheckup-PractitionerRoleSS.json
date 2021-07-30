@@ -1,0 +1,18 @@
+{
+  "resourceType": "PractitionerRole",
+  "id": "jp-eCheckup-PractitionerRoleSS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-06-22T05:11:58.176+00:00",
+    "source": "#PYe9VHRDrO38SWz7"
+  },
+  "practitioner": {
+    "reference": "Practitioner/jp-eCheckup-PractitionerSS"
+  },
+  "organization": {
+    "reference": "Organization/jp-eCheckup-OrganizationSS"
+  }
+}

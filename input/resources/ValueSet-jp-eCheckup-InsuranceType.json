@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "insuranceType",
+  "id": "jp-eCheckup-InsuranceType",
+  "title": "保険種別コード",
+  "description": "保険種別コードを表すバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-insuranceType.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T08:03:05.534+00:00",
+    "source": "#ojTLY5Bk5ALZVt21"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem6.html"
+      }
+    ]
+  }
+}

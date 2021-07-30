@@ -1,0 +1,17 @@
+<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
+  <li><a href="index.html">IG Home</a></li>
+  <li><a href="toc.html">Table of Contents</a></li>
+  <li><a href="summary.html">概要</a></li>
+
+  <li><a href="usecase.html">ユースケース</a></li>
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">ガイダンス<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a href="structure.html">文書構造と健康診断結果報告書の識別</a></li>
+      <li><a href="descriptionStandard.html">記述規格</a></li>
+      <li><a href="namespace.html">名前空間と識別ID</a></li>    </ul>
+  </li>  <li><a href="artifacts.html">Artifact Index</a></li>
+</ul>

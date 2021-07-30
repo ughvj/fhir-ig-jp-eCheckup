@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem9",
+  "id": "CodeSystem9",
+  "title": "健診項目コード(JLAC10)",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem9.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-02T00:43:42.440+00:00",
+    "source": "#Y5JIqKezmsUTg76c"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-JLAC10.html"
+}

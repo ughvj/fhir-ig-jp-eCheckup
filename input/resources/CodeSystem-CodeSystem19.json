@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem19",
+  "id": "CodeSystem19",
+  "title": "判定区分コードタイプB",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem19.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:28:03.265+00:00",
+    "source": "#084J4eZzJaPmJ8gc"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.5020.2.2"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCodeTypeB.html"
+}

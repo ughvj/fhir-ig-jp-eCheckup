@@ -1,0 +1,20 @@
+{
+  "resourceType": "Specimen",
+  "id": "jp-eCheckup-SpecimenSS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-06-18T07:37:49.147+00:00",
+    "source": "#nkHiPqgjZlMej8wB"
+  },
+  "type": {
+    "coding": [
+      {
+        "code": "023",
+        "system": "http://jpfhir.jp/eCheckup/CodeSystem/JLAC10-Specimen"
+      }
+    ]
+  }
+}

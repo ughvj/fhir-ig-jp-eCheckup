@@ -1,0 +1,53 @@
+{
+  "resourceType": "Coverage",
+  "id": "jp-eCheckup-Coverage2SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage.html"
+    ],
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T09:37:57.557+00:00",
+    "source": "#Bd2j7B18tfJfdvmv"
+  },
+  "status": "active",
+  "type": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.392.200119.6.208",
+        "code": "1"
+      }
+    ]
+  },
+  "extension": [
+    {
+      "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-InsuredPersonNumber.html",
+      "valueString": "１２３４５"
+    },
+    {
+      "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-InsuredPersonSymbol.html",
+      "valueString": "６７８９０"
+    }
+  ],
+  "beneficiary": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "dependent": "01",
+  "relationship": {
+    "coding": [
+      {
+        "code": "1",
+        "system": "urn:oid:1.2.392.100495.20.2.62",
+        "display": "本人"
+      }
+    ]
+  },
+  "period": {
+    "start": "2018-04-01",
+    "end": "2022-03-31"
+  },
+  "payor": [
+    {
+      "reference": "Organization/jp-eCheckup-OrganizationSS"
+    }
+  ]
+}

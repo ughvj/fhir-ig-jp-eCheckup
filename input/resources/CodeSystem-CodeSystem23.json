@@ -1,0 +1,47 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem23",
+  "id": "CodeSystem23",
+  "title": "連絡先種別",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem23.html",
+  "meta": {
+    "versionId": "9",
+    "lastUpdated": "2021-07-01T07:31:28.024+00:00",
+    "source": "#So3OVp0mFHBNtgmL"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-ContactPointSystem.html",
+  "concept": [
+    {
+      "code": "phone",
+      "display": "電話"
+    },
+    {
+      "code": "fax",
+      "display": "ファックス"
+    },
+    {
+      "code": "email",
+      "display": "電子メールアドレス"
+    },
+    {
+      "code": "pager",
+      "display": "ポケットベル番号"
+    },
+    {
+      "code": "url",
+      "display": "URLとして表現される連絡先（Webサイトやブログ、Skypeなど）"
+    },
+    {
+      "code": "sms",
+      "display": "SMSメッセージの送信に使用できる連絡先"
+    },
+    {
+      "code": "other",
+      "display": "その他の連絡先"
+    }
+  ],
+  "count": 7
+}

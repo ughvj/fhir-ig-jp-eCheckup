@@ -1,0 +1,49 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation5SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ],
+    "versionId": "4",
+    "lastUpdated": "2021-06-24T04:46:54.080+00:00",
+    "source": "#Scu8xQvlXXznXODN"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "exam"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "9N611000000000011",
+        "display": "他覚症状"
+      }
+    ]
+  },
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+            "code": "9N61100000000049",
+            "display": "他覚症状所見"
+          }
+        ]
+      },
+      "valueString": "胸部くも状血管あり"
+    }
+  ],
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  }
+}

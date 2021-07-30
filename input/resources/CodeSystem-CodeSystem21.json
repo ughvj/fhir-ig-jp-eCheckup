@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem21",
+  "id": "CodeSystem21",
+  "title": "判定区分コードタイプD",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem21.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:30:00.723+00:00",
+    "source": "#IqQpAbQb5b6wzVS9"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.5020.2.4"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCodeTypeD.html"
+}

@@ -1,0 +1,2296 @@
+{
+  "resourceType": "Bundle",
+  "id": "jp-eCheckup-Bundle3SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html"
+    ],
+    "versionId": "27",
+    "lastUpdated": "2021-07-01T09:39:19.123+00:00",
+    "source": "#iwcCWRqkg9NmEFr0"
+  },
+  "type": "document",
+  "timestamp": "2020-10-21T12:12:21.123+00:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:fd13ba04-3b58-ac07-fad6-464cec87691d",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-1",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Composition.html"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/documentType",
+              "code": "01",
+              "display": "健康診断結果報告書"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1001",
+                "version": "1",
+                "code": "43",
+                "display": "事業者健診"
+              }
+            ]
+          }
+        ],
+        "event": [
+          {
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1002",
+                    "code": "030",
+                    "display": "事業者健診"
+                  }
+                ]
+              }
+            ],
+            "period": {
+              "start": "2020-10-01",
+              "end": "2020-10-01"
+            },
+            "detail": [
+              {
+                "reference": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad"
+              }
+            ]
+          }
+        ],
+        "section": [
+          {
+            "title": "健診セクション",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1010",
+                  "code": "01910",
+                  "display": "健診セクション"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>身長 162.3 cm</li><li>体重 65.5 kg</li><li>BMI 24.9 kg/m2</li><li>腹囲 70 cm</li></ul></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:6fed7a5c-ddbd-2cdf-cb2f-77b8e1e8a6c3"
+              },
+              {
+                "reference": "urn:uuid:47904d61-1d8f-f28a-668f-ecf0f8566537"
+              },
+              {
+                "reference": "urn:uuid:9363c32a-d276-36c0-2756-91d61144f4bb"
+              },
+              {
+                "reference": "urn:uuid:7408c709-b173-205e-93e4-e84994b1234b"
+              },
+              {
+                "reference": "urn:uuid:f9c17b18-8ae7-4bc3-d6d4-788957cd8630"
+              },
+              {
+                "reference": "urn:uuid:df7d1219-a653-9562-20a8-0530b2a85252"
+              },
+              {
+                "reference": "urn:uuid:519ee54e-9f00-754f-1759-580e862421cc"
+              },
+              {
+                "reference": "urn:uuid:f2a35f0f-2808-7241-8b0d-862ea0ba1c86"
+              },
+              {
+                "reference": "urn:uuid:9a2e3978-a98d-2e82-829f-435aa4e3ef50"
+              },
+              {
+                "reference": "urn:uuid:8b03c6f4-b439-2d5a-85bb-3491e51d73ab"
+              },
+              {
+                "reference": "urn:uuid:5d6f5a57-cf35-a808-bef3-a3993b50b934"
+              },
+              {
+                "reference": "urn:uuid:35ac22fc-3d41-f4c0-59ce-86db54b27733"
+              },
+              {
+                "reference": "urn:uuid:994ff41c-4de7-de26-0357-6b880c1f0d55"
+              },
+              {
+                "reference": "urn:uuid:abe72ebb-2dbf-ea96-a331-80f96eb9b920"
+              },
+              {
+                "reference": "urn:uuid:43bb00a5-ec1b-cd71-a982-bee5d7cae9a9"
+              },
+              {
+                "reference": "urn:uuid:1cc48bef-b40d-46d4-826c-7ec838a26d6a"
+              },
+              {
+                "reference": "urn:uuid:0e57b532-b5ab-880d-565a-56cf356c094f"
+              },
+              {
+                "reference": "urn:uuid:15d6e055-ea88-fdd1-1d99-440d851ee410"
+              },
+              {
+                "reference": "urn:uuid:a5598b7b-5fab-329c-ec00-19628a0a4959"
+              },
+              {
+                "reference": "urn:uuid:ec8fc5e3-28af-4071-ad2c-425f01955396"
+              },
+              {
+                "reference": "urn:uuid:070d1894-7dc0-8fbc-5190-665b2c92763c"
+              },
+              {
+                "reference": "urn:uuid:94b070e7-e091-cc28-a390-72b9b7b24377"
+              },
+              {
+                "reference": "urn:uuid:e306832c-2a44-5b21-4aea-2dd73d0d436e"
+              },
+              {
+                "reference": "urn:uuid:21610e81-2847-8572-a9e0-282016e14f23"
+              },
+              {
+                "reference": "urn:uuid:8b3b3fdf-ae20-6b76-393d-206318026fc3"
+              },
+              {
+                "reference": "urn:uuid:8484a76a-44f7-2198-9930-5ea0b97ce588"
+              },
+              {
+                "reference": "urn:uuid:c37c6eaf-da9a-da01-3307-8b424738a960"
+              },
+              {
+                "reference": "urn:uuid:9820d10c-88eb-b6c4-3ab6-14669c03d9bd"
+              },
+              {
+                "reference": "urn:uuid:aab8a2d8-458e-f55d-eedc-3f28a5d74dcf"
+              },
+              {
+                "reference": "urn:uuid:71b30370-53f2-9759-7b9c-9dc8347e965a"
+              }
+            ]
+          },
+          {
+            "title": "問診セクション",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1010",
+                  "code": "01920",
+                  "display": "問診セクション"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>問診結果</p></div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:ceac8000-a0b2-888f-e151-2cc94a5a8652"
+              },
+              {
+                "reference": "urn:uuid:1d960f4c-e93a-013c-b1dc-99e6f1e3ece3"
+              },
+              {
+                "reference": "urn:uuid:fc7553a9-66b8-8183-773f-b27cde515ecf"
+              },
+              {
+                "reference": "urn:uuid:66b3b991-4df7-4b3d-f9c7-965a1588bbf0"
+              },
+              {
+                "reference": "urn:uuid:08f49bc3-1cd1-b942-1723-4aa950b4c77d"
+              },
+              {
+                "reference": "urn:uuid:d669559e-2e5a-c271-c1ff-cde1228d4077"
+              },
+              {
+                "reference": "urn:uuid:3a33a26e-3532-06a6-90a9-e0566342cd49"
+              }
+            ]
+          },
+          {
+            "title": "問診情報",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.6.1002",
+                  "code": "01920"
+                }
+              ]
+            }
+          },
+          {
+            "title": "添付書類",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.6.1002",
+                  "code": "01995"
+                }
+              ]
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1.0"
+          }
+        ],
+        "identifier": {
+          "system": "http://jpfhir.jp/fhir/eCheckup/documentIdentifier",
+          "value": "12345"
+        },
+        "language": "ja",
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "encounter": {
+          "reference": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad"
+        },
+        "date": "2020-10-21T12:12:21+09:00",
+        "author": [
+          {
+            "reference": "urn:uuid:e5ea153d-fd94-adcc-fb27-df24f394d3fa"
+          }
+        ],
+        "title": "健康診断結果のお知らせ",
+        "confidentiality": "N",
+        "custodian": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-2",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"
+          ]
+        },
+        "contact": [
+          {
+            "extension": [
+              {
+                "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Position.html",
+                "valueString": "課長"
+              }
+            ],
+            "relationship": [
+              {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5006",
+                    "code": "1000",
+                    "display": "勤務先"
+                  }
+                ]
+              }
+            ],
+            "organization": {
+              "reference": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"
+            },
+            "period": {
+              "start": "2010-04-01"
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102.11234567890",
+            "value": "34567"
+          }
+        ],
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "use": "official",
+            "family": "健診",
+            "given": [
+              "太郎"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "use": "official",
+            "family": "ケンシン",
+            "given": [
+              "タロウ"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03-1111-2222",
+            "use": "home"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1960-08-03",
+        "address": [
+          {
+            "text": "神奈川県横浜市港区１－２－３",
+            "postalCode": "123-4567",
+            "country": "JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e5ea153d-fd94-adcc-fb27-df24f394d3fa",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-3",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html"
+          ]
+        },
+        "practitioner": {
+          "reference": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba"
+        },
+        "organization": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-4",
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "family": "東京",
+            "given": [
+              "太郎"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "family": "トウキョウ",
+            "given": [
+              "タロウ"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-5",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102",
+            "value": "1311234567"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0123-456-7890"
+          }
+        ],
+        "name": "厚生労働省第一病院",
+        "address": [
+          {
+            "text": "東京都千代田区千代田９－９－９",
+            "postalCode": "100-0001",
+            "country": "JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-6",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "営業部",
+        "partOf": {
+          "reference": "urn:uuid:c00adf27-40ee-f30b-1cfa-b09fc557ce47"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c00adf27-40ee-f30b-1cfa-b09fc557ce47",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-7",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "name": "サンプル株式会社"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-8",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Encounter.html"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/encounterCategory",
+          "code": "checkup",
+          "display": "健診"
+        },
+        "serviceType": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.200119.6.1002",
+              "code": "030",
+              "display": "事業者健診"
+            }
+          ]
+        },
+        "period": {
+          "start": "2020-10-01",
+          "end": "2020-10-01"
+        },
+        "serviceProvider": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6fed7a5c-ddbd-2cdf-cb2f-77b8e1e8a6c3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-9",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N001000000000001",
+              "display": "身長"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:47904d61-1d8f-f28a-668f-ecf0f8566537",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-10",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N006000000000001",
+              "display": "体重"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9363c32a-d276-36c0-2756-91d61144f4bb",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-11",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N011000000000001",
+              "display": "ＢＭＩ"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7408c709-b173-205e-93e4-e84994b1234b",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-12",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N016160100000001",
+              "display": "腹囲"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "method": {
+          "coding": [
+            {
+              "code": "9N01610000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "１回目"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f9c17b18-8ae7-4bc3-d6d4-788957cd8630",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-13",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N051000000000049",
+              "display": "業務歴"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "valueString": "特記なし"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:df7d1219-a653-9562-20a8-0530b2a85252",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-14",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N056000000000011",
+              "display": "既往歴"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:519ee54e-9f00-754f-1759-580e862421cc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-15",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N061000000000011",
+              "display": "自覚症状"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f2a35f0f-2808-7241-8b0d-862ea0ba1c86",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-16",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N066000000000011",
+              "display": "他覚症状"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9a2e3978-a98d-2e82-829f-435aa4e3ef50",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-17",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8b03c6f4-b439-2d5a-85bb-3491e51d73ab",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-18",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3F015000002327101",
+              "display": "中性脂肪"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3F01510000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "可視吸光光度法（酵素比色法・グリセロール消去）"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 50,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            },
+            "high": {
+              "value": 149,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5d6f5a57-cf35-a808-bef3-a3993b50b934",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-19",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3F070000002327101",
+              "display": "ＨＤＬコレステロール"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3F07010000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "可視吸光光度法（直接法（非沈殿法））"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 40,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            },
+            "high": {
+              "value": 96,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:35ac22fc-3d41-f4c0-59ce-86db54b27733",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-20",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3F077000002327101",
+              "display": "ＬＤＬコレステロール"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3F07710000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "可視吸光光度法（直接法（非沈殿法））"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 70,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            },
+            "high": {
+              "value": 140,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:994ff41c-4de7-de26-0357-6b880c1f0d55",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-21",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3B035000002327201",
+              "display": "ＧＯＴ（ＡＳＴ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3B03510000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "紫外吸光光度法（JSCC 標準化対応法）"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 10,
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            },
+            "high": {
+              "value": 40,
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:abe72ebb-2dbf-ea96-a331-80f96eb9b920",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-22",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3B045000002327201",
+              "display": "ＧＰＴ（ＡＬＴ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3B04510000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "紫外吸光光度法（JSCC 標準化対応法）"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 5,
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            },
+            "high": {
+              "value": 30,
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:43bb00a5-ec1b-cd71-a982-bee5d7cae9a9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-23",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3B090000002327101",
+              "display": "γ－ＧＴ（γ－ＧＴＰ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3B09010000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "可視吸光光度法（JSCC 標準化対応法）"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            },
+            "high": {
+              "value": 30,
+              "code": "U/L",
+              "system": "http://unitsofmeasure.org",
+              "unit": "U/l"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1cc48bef-b40d-46d4-826c-7ec838a26d6a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-24",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "3D010000001926101",
+              "display": "空腹時血糖"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "method": {
+          "coding": [
+            {
+              "code": "3D01010000",
+              "system": "urn:oid:1.2.392.200119.6.1007",
+              "display": "電位差法（ブドウ糖酸化酵素電極法）"
+            }
+          ]
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "high": {
+              "value": 99,
+              "code": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "mg/dl"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0e57b532-b5ab-880d-565a-56cf356c094f",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-25",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N141000000000011",
+              "display": "採血時間（食後）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:15d6e055-ea88-fdd1-1d99-440d851ee410",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-26",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "1A020000000191111",
+              "display": "尿糖"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a5598b7b-5fab-329c-ec00-19628a0a4959",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-27",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "1A010000000191111",
+              "display": "尿蛋白"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ec8fc5e3-28af-4071-ad2c-425f01955396",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-28",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/jp-eCheckup-PatientSS"
+        },
+        "hasMember": [
+          {
+            "reference": "urn:uuid:9a778fff-b506-fef3-b02c-b6bd28c2686a"
+          },
+          {
+            "reference": "urn:uuid:e828fa24-d30f-90d0-2fec-ca808edaeb15"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9a778fff-b506-fef3-b02c-b6bd28c2686a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-29",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "2A030000001930101",
+              "display": "血色素量"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 12.1,
+              "code": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "g/dl"
+            },
+            "high": {
+              "value": 14.5,
+              "code": "g/dL",
+              "system": "http://unitsofmeasure.org",
+              "unit": "g/dl"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e828fa24-d30f-90d0-2fec-ca808edaeb15",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-30",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "2A020000001930101",
+              "display": "赤血球数"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "code": "N",
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+              }
+            ]
+          }
+        ],
+        "specimen": {
+          "reference": "Specimen/jp-eCheckup-SpecimenSS"
+        },
+        "referenceRange": [
+          {
+            "low": {
+              "value": 353,
+              "code": "10*4/mm3",
+              "system": "http://unitsofmeasure.org",
+              "unit": "10*4/mm3"
+            },
+            "high": {
+              "value": 484,
+              "code": "10*4/mm3",
+              "system": "http://unitsofmeasure.org",
+              "unit": "10*4/mm3"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:070d1894-7dc0-8fbc-5190-665b2c92763c",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-31",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "hasMember": [
+          {
+            "reference": "urn:uuid:2313d7a5-6d29-90f9-ef77-e79ed7b0ca20"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2313d7a5-6d29-90f9-ef77-e79ed7b0ca20",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-32",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9A110160700000011",
+              "display": "心電図（所見の有無）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:94b070e7-e091-cc28-a390-72b9b7b24377",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-33",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "imaging"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "hasMember": [
+          {
+            "reference": "urn:uuid:c9181b1b-5390-9f8e-3474-95fe63215e7a"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c9181b1b-5390-9f8e-3474-95fe63215e7a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-34",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "procedure"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N206160700000011",
+              "display": "胸部エックス線検査（一般：直接撮影）（所見の有無）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e306832c-2a44-5b21-4aea-2dd73d0d436e",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-35",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9E160162100000001",
+              "display": "視力（右）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:21610e81-2847-8572-a9e0-282016e14f23",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-36",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9E160162200000001",
+              "display": "視力（左）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8b3b3fdf-ae20-6b76-393d-206318026fc3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-37",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9D100163100000011",
+              "display": "聴力（右、１０００Ｈｚ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8484a76a-44f7-2198-9930-5ea0b97ce588",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-38",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9D100163200000011",
+              "display": "聴力（右、４０００Ｈｚ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c37c6eaf-da9a-da01-3307-8b424738a960",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-39",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9D100163500000011",
+              "display": "聴力（左、１０００Ｈｚ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9820d10c-88eb-b6c4-3ab6-14669c03d9bd",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-40",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9D100163600000011",
+              "display": "聴力（左、４０００Ｈｚ）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:aab8a2d8-458e-f55d-eedc-3f28a5d74dcf",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-41",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N511000000000049",
+              "display": "医師の診断（判定）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba"
+          }
+        ],
+        "valueString": "肝機能がわずかに異常ですが支障はないと思われます。"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:71b30370-53f2-9759-7b9c-9dc8347e965a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-42",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N521000000000049",
+              "display": "医師の意見"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "performer": [
+          {
+            "reference": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba"
+          }
+        ],
+        "valueString": "通常勤務"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ceac8000-a0b2-888f-e151-2cc94a5a8652",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-43",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N701000000000011",
+              "display": "服薬１（血圧）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1d960f4c-e93a-013c-b1dc-99e6f1e3ece3",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-44",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N706000000000011",
+              "display": "服薬２（血糖）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fc7553a9-66b8-8183-773f-b27cde515ecf",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-45",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N711000000000011",
+              "display": "服薬３（脂質）"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:66b3b991-4df7-4b3d-f9c7-965a1588bbf0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-46",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+          ]
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "social-history"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+              "code": "9N736000000000011",
+              "display": "喫煙"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:08f49bc3-1cd1-b942-1723-4aa950b4c77d",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-47",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "019",
+              "system": "http://jpfhir.jp/eCheckup/CodeSystem/JLAC10-Specimen",
+              "display": "全血（添加物入り）"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d669559e-2e5a-c271-c1ff-cde1228d4077",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-48",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "023",
+              "system": "http://jpfhir.jp/eCheckup/CodeSystem/JLAC10-Specimen",
+              "display": "血清"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3a33a26e-3532-06a6-90a9-e0566342cd49",
+      "resource": {
+        "resourceType": "Specimen",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle3SS-49",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Specimen.html"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "code": "001",
+              "system": "http://jpfhir.jp/eCheckup/CodeSystem/JLAC10-Specimen",
+              "display": "尿（含むその他）"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

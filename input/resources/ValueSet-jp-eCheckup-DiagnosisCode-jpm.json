@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "diagnosisCode-jpm",
+  "id": "jp-eCheckup-DiagnosisCode-jpm",
+  "title": "判定区分（（財）日本予防医学協会）",
+  "description": "（財）日本予防医学協会判定区分に対応する判定区分のバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-jpm.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:57:57.114+00:00",
+    "source": "#2CXIdLf9KVtQPd7r"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem17.html"
+      }
+    ]
+  }
+}

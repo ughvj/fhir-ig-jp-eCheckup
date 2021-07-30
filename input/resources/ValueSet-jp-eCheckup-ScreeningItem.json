@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ScreeningItem",
+  "id": "jp-eCheckup-ScreeningItem",
+  "title": "説明ブロックの対象検診項目",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-ScreeningItem.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:55:59.609+00:00",
+    "source": "#ySA3K6dtKx9e2Tes"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem28.html"
+      }
+    ]
+  }
+}

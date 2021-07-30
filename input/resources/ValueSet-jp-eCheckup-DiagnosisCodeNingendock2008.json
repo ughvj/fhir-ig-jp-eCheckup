@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "diagnosisCode-ningendock2008",
+  "id": "jp-eCheckup-DiagnosisCodeNingendock2008",
+  "title": "判定区分（人間ドック学会2008）",
+  "description": "人間ドック学会判定区分2008年版に対応する判定区分のバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-ningendock2008.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T08:01:19.057+00:00",
+    "source": "#CskU7BtU7bsEmEDd"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem14.html"
+      }
+    ]
+  }
+}

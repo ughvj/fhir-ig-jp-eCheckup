@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "diagnosisCodeTypeD",
+  "id": "jp-eCheckup-DiagnosisCodeTypeD",
+  "title": "判定区分コードタイプD",
+  "description": "その他の判定区分に対応する判定区分のバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCodeTypeD.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T08:02:24.070+00:00",
+    "source": "#GKZdJ9MloZRd88AJ"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem21.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "resourceType": "Patient",
+  "id": "jp-eCheckup-Patient2SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"
+    ],
+    "versionId": "7",
+    "lastUpdated": "2021-07-01T09:46:37.928+00:00",
+    "source": "#3mIzgMqg3oMX5FjQ"
+  },
+  "contact": [
+    {
+      "extension": [
+        {
+          "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Position.html",
+          "valueString": "課長"
+        }
+      ],
+      "relationship": [
+        {
+          "coding": [
+            {
+              "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5006",
+              "code": "1000",
+              "display": "勤務先"
+            }
+          ]
+        }
+      ],
+      "organization": {
+        "reference": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"
+      },
+      "period": {
+        "start": "2010-04-01"
+      }
+    }
+  ],
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.200119.6.102.11234567890",
+      "value": "34567"
+    }
+  ],
+  "name": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "IDE"
+        }
+      ],
+      "use": "official",
+      "family": "健診",
+      "given": [
+        "太郎"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "SYL"
+        }
+      ],
+      "use": "official",
+      "family": "ケンシン",
+      "given": [
+        "タロウ"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03-1111-2222",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1950-05-04",
+  "address": [
+    {
+      "text": "神奈川県横浜市港区１－２－３",
+      "postalCode": "123-4567",
+      "country": "JP"
+    }
+  ]
+}

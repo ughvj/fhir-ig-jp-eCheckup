@@ -1,0 +1,39 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem26",
+  "id": "CodeSystem26",
+  "title": "和暦西暦変換",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem26.html",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-07-01T07:32:05.609+00:00",
+    "source": "#yK4zFP7b9HN8XsLK"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-JapaneseYearConversion.html",
+  "concept": [
+    {
+      "code": "明治",
+      "display": "1868年9月8日 ～ 1912年7月29日"
+    },
+    {
+      "code": "大正",
+      "display": "1912年7月30日 ～ 1926年12月24日"
+    },
+    {
+      "code": "昭和",
+      "display": "1926年12月25日 ～ 1989年1月7日"
+    },
+    {
+      "code": "平成",
+      "display": "1989年1月8日 ～ 2018年4月30日"
+    },
+    {
+      "code": "令和",
+      "display": "2019年5月1日 ～"
+    }
+  ],
+  "count": 5
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "checkupCardType",
+  "id": "jp-eCheckup-CheckupCardType",
+  "title": "券面種別コード",
+  "description": "券面種別コードを表すバリューセット。受診券であることを示す。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupCardType.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:56:43.977+00:00",
+    "source": "#pce4UGEPsuQz31je"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem5.html"
+      }
+    ]
+  }
+}

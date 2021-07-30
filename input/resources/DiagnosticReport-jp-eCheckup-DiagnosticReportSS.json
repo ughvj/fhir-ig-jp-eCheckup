@@ -1,0 +1,29 @@
+{
+  "resourceType": "DiagnosticReport",
+  "id": "jp-eCheckup-DiagnosticReportSS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DiagnosticReport.html"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-06-22T04:40:22.245+00:00",
+    "source": "#Enr1THxV7MqReSNh"
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "code": "18748-4",
+        "system": "http://loinc.org",
+        "display": "画像検査報告書"
+      }
+    ]
+  },
+  "media": [
+    {
+      "link": {
+        "reference": "Media/jp-eCheckup-MediaSS"
+      }
+    }
+  ]
+}

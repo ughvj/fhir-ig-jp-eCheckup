@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem4",
+  "id": "CodeSystem4",
+  "title": "セクションコード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem4.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-01T07:35:39.257+00:00",
+    "source": "#UN88qt4r9lJ1U57a"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1010"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-sectionCode.html"
+}

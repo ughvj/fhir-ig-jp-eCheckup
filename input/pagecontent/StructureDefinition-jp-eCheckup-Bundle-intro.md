@@ -1,0 +1,5 @@
+entryの最初のresourceは、構成リソース一覧目次を表すCompositionリソースである。
+
+２つめのリソース以降に、Compositionリソースから参照される健診受診者を表す Patientリソース、報告書の作成機関情報、および、作成者情報を表す、PractitionerRoleリソース、Organizationリソース、Practitionerリソース、健診実施情報を表すEncounterリソース、保険情報と受診券情報を表すCoverageリソース、及び、保険者を表すOrganizationリソースが出現する。
+
+その後に、１健診項目がひとつのObservationリソースで記述され、それが健診項目の数だけ繰り返し出現する。

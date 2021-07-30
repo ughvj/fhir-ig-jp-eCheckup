@@ -1,0 +1,376 @@
+{
+  "resourceType": "Bundle",
+  "id": "jp-eCheckup-Bundle2SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Bundle.html"
+    ],
+    "versionId": "10",
+    "lastUpdated": "2021-06-24T09:41:10.637+00:00",
+    "source": "#1wldEJEs8S1DNZZu"
+  },
+  "type": "document",
+  "timestamp": "2020-10-21T12:12:21.123+00:00",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:fd13ba04-3b58-ac07-fad6-464cec87691d",
+      "resource": {
+        "resourceType": "Composition",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-1",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Composition.html"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/documentType",
+              "code": "01",
+              "display": "健康診断結果報告書"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1001",
+                "version": "1",
+                "code": "10",
+                "display": "特定健診"
+              }
+            ]
+          }
+        ],
+        "event": [
+          {
+            "code": [
+              {
+                "coding": [
+                  {
+                    "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1002",
+                    "code": "010",
+                    "display": "特定健診"
+                  }
+                ]
+              }
+            ],
+            "period": {
+              "start": "2020-10-01",
+              "end": "2020-10-01"
+            },
+            "detail": [
+              {
+                "reference": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad"
+              }
+            ]
+          }
+        ],
+        "section": [
+          {
+            "title": "添付書類セクション",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:2.16.840.1.113883.2.2.1.6.1010",
+                  "code": "01990",
+                  "display": "添付書類セクション"
+                }
+              ]
+            },
+            "text": {
+              "status": "generated",
+              "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">添付書類：</div>"
+            },
+            "entry": [
+              {
+                "reference": "urn:uuid:d998b928-380e-0700-949b-3b092b3ca3ad"
+              }
+            ]
+          },
+          {
+            "title": "健診情報",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.6.1002",
+                  "code": "01910"
+                }
+              ]
+            }
+          },
+          {
+            "title": "問診情報",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.6.1002",
+                  "code": "01920"
+                }
+              ]
+            }
+          },
+          {
+            "title": "添付書類",
+            "code": {
+              "coding": [
+                {
+                  "system": "urn:oid:1.2.392.200119.6.1002",
+                  "code": "01995"
+                }
+              ]
+            }
+          }
+        ],
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+            "valueString": "1.0"
+          }
+        ],
+        "identifier": {
+          "system": "http://jpfhir.jp/fhir/eCheckup/documentIdentifier",
+          "value": "12345"
+        },
+        "language": "ja",
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3"
+        },
+        "encounter": {
+          "reference": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad"
+        },
+        "date": "2020-10-21T12:12:21+09:00",
+        "author": [
+          {
+            "reference": "urn:uuid:e5ea153d-fd94-adcc-fb27-df24f394d3fa"
+          }
+        ],
+        "title": "健康診断結果のお知らせ",
+        "confidentiality": "N",
+        "custodian": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4bc68294-1895-d159-655b-1bc7e83f52f3",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-2",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102.11234567890",
+            "value": "34567"
+          }
+        ],
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "use": "official",
+            "text": "健診太郎",
+            "family": "健診",
+            "given": [
+              "太郎"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "use": "official",
+            "text": "ケンシンタロウ",
+            "family": "ケンシン",
+            "given": [
+              "タロウ"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03-1111-2222",
+            "use": "home"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1950-05-04",
+        "address": [
+          {
+            "text": "神奈川県横浜市港区１－２－３",
+            "postalCode": "123-4567",
+            "country": "JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e5ea153d-fd94-adcc-fb27-df24f394d3fa",
+      "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-3",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html"
+          ]
+        },
+        "practitioner": {
+          "reference": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba"
+        },
+        "organization": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6c4ef273-df66-00ab-c021-d05c5a19e0ba",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-4",
+        "name": [
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "IDE"
+              }
+            ],
+            "text": "東京太郎",
+            "family": "東京",
+            "given": [
+              "太郎"
+            ]
+          },
+          {
+            "extension": [
+              {
+                "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+                "valueCode": "SYL"
+              }
+            ],
+            "text": "トウキョウタロウ",
+            "family": "トウキョウ",
+            "given": [
+              "タロウ"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407",
+      "resource": {
+        "resourceType": "Organization",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-5",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:oid:1.2.392.200119.6.102",
+            "value": "1311234567"
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+                "code": "prov"
+              }
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "0123-456-7890"
+          }
+        ],
+        "name": "厚生労働省第一病院",
+        "address": [
+          {
+            "text": "東京都千代田区千代田９－９－９",
+            "postalCode": "100-0001",
+            "country": "JP"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3af3232e-1579-d4f6-3578-aa1e799fdcad",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-6",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Encounter.html"
+          ]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/encounterCategory",
+          "code": "checkup",
+          "display": "健診"
+        },
+        "serviceType": {
+          "coding": [
+            {
+              "system": "urn:oid:1.2.392.200119.6.1002",
+              "code": "010",
+              "display": "特定健診"
+            }
+          ]
+        },
+        "period": {
+          "start": "2020-10-01",
+          "end": "2020-10-01"
+        },
+        "serviceProvider": {
+          "reference": "urn:uuid:d1fb6063-8f12-4c2c-922a-7b5e467c8407"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d998b928-380e-0700-949b-3b092b3ca3ad",
+      "resource": {
+        "resourceType": "DocumentReference",
+        "id": "Inline-Instance-for-jp-eCheckup-Bundle2SS-7",
+        "meta": {
+          "profile": [
+            "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DocumentReference.html"
+          ]
+        },
+        "status": "current",
+        "content": [
+          {
+            "format": {
+              "system": "http://jpfhir.jp/eCheckup/CodeSystem/attachementFormat"
+            },
+            "attachment": {
+              "contentType": "text/xml",
+              "data": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPGNoZWNrdXBDbGFpbSB4bWxuczp4c2k9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hLWluc3RhbmNlIiB4c2k6c2NoZW1hTG9jYXRpb249Imh0dHA6Ly90b2t1dGVpa2Vuc2hpbi5qcC9jaGVja3VwLzIwMDcgLi4vWFNEL2NjMDhfVjA4LnhzZCIgeG1sbnM9Imh0dHA6Ly90b2t1dGVpa2Vuc2hpbi5qcC9jaGVja3VwLzIwMDciPgogIDxlbmNvdW50ZXI+CiAgICA8c2VydmljZUV2ZW50VHlwZSBjb2RlPSIxIiAvPgogIDwvZW5jb3VudGVyPgogIDxzdWJqZWN0UGVyc29uPgogICAgPHBlcmZvcm1lck9yZ2FuaXphdGlvbj4KICAgICAgPGlkIHJvb3Q9IjEuMi4zOTIuMjAwMTE5LjYuMTAyIiBleHRlbnNpb249IjIyMTQxMDQ3OTIiIC8+CiAgICA8L3BlcmZvcm1lck9yZ2FuaXphdGlvbj4KICAgIDxpbnN1cmFuY2VDYXJkPgogICAgICA8aW5zdXJlck51bWJlciByb290PSIxLjIuMzkyLjIwMDExOS42LjEwMSIgZXh0ZW5zaW9uPSIyMDAxMSIgLz4KICAgICAgPHN5bWJvbCByb290PSIxLjIuMzkyLjIwMDExOS42LjIwNCIgZXh0ZW5zaW9uPSIxMTEiIC8+CiAgICAgIDxudW1iZXIgcm9vdD0iMS4yLjM5Mi4yMDAxMTkuNi4yMDUiIGV4dGVuc2lvbj0i77yRIiAvPgogICAgPC9pbnN1cmFuY2VDYXJkPgogICAgPG5hbWU+eHh4PC9uYW1lPgogICAgPGFkZHI+CiAgICAgIDxwb3N0YWxDb2RlPjQyMS0yMTI0PC9wb3N0YWxDb2RleHh4PC9hZGRyPgogICAgPGJpcnRoVGltZSB2YWx1ZT0iMTk0ODEyMjEiIC8+CiAgICA8YWRtaW5pc3RyYXRpdmVHZW5kZXIgY29kZT0iMiIgLz4KICA8L3N1YmplY3RQZXJzb24+CiAgPGNoZWNrdXBDYXJkPgogICAgPGlkIHJvb3Q9IjEuMi4zOTIuMjAwMTE5LjYuMjA5IiBleHRlbnNpb249IjE4NTIyMDA0NDM4IiAvPgogICAgPGVmZmVjdGl2ZVRpbWU+CiAgICAgIDxoaWdoIHZhbHVlPSIyMDE5MDMzMSIgLz4KICAgIDwvZWZmZWN0aXZlVGltZT4KICAgIDxjaGFyZ2VUeXBlQmFzaWMgY29kZT0iNCI+CiAgICAgIDxhbW91bnQgdmFsdWU9IjAwNjUyMCIgLz4KICAgIDwvY2hhcmdlVHlwZUJhc2ljPgogICAgPGNoYXJnZVR5cGVEZXRhaWwgY29kZT0iNCI+CiAgICAgIDxhbW91bnQgdmFsdWU9IjAwMzQwMCIgLz4KICAgIDwvY2hhcmdlVHlwZURldGFpbD4KICA8L2NoZWNrdXBDYXJkPgogIDxzZXR0bGVtZW50PgogICAgPGNsYWltVHlwZSBjb2RlPSIyIiAvPgogICAgPGNvbW1pc3Npb25UeXBlIGNvZGU9IjEiIC8+CiAgICA8dW5pdFByaWNlQmFzaWM+CiAgICAgIDxhbW91bnQgdmFsdWU9Ijg3NDMiIC8+CiAgICA8L3VuaXRQcmljZUJhc2ljPgogICAgPHVuaXRQcmljZURldGFpbD4KICAgICAgPGFtb3VudCB2YWx1ZT0iMzA4IiAvPgogICAgICA8b2JzZXJ2YXRpb24gY29kZT0iMSIgLz4KICAgIDwvdW5pdFByaWNlRGV0YWlsPgogICAgPHVuaXRQcmljZURldGFpbD4KICAgICAgPGFtb3VudCB2YWx1ZT0iMTU0MyIgLz4KICAgICAgPG9ic2VydmF0aW9uIGNvZGU9IjIiIC8+CiAgICA8L3VuaXRQcmljZURldGFpbD4KICAgIDxwYXltZW50Rm9yQmFzaWM+CiAgICAgIDxhbW91bnQgdmFsdWU9IjAwMjIyMyIgLz4KICAgIDwvcGF5bWVudEZvckJhc2ljPgogICAgPHBheW1lbnRGb3JEZXRhaWw+CiAgICAgIDxhbW91bnQgdmFsdWU9IjAwMDAwMCIgLz4KICAgIDwvcGF5bWVudEZvckRldGFpbD4KICAgIDx1bml0QW1vdW50IHZhbHVlPSIxMDU5NCIgLz4KICAgIDxwYXltZW50QW1vdW50IHZhbHVlPSIyMjIzIiAvPgogICAgPGNsYWltQW1vdW50IHZhbHVlPSI4MzcxIiAvPgogIDwvc2V0dGxlbWVudD4KPC9jaGVja3VwQ2xhaW0+"
+            }
+          }
+        ],
+        "description": "特定健診情報ファイル"
+      }
+    }
+  ]
+}

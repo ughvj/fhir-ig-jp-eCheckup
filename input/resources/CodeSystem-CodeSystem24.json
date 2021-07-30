@@ -1,0 +1,39 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem24",
+  "id": "CodeSystem24",
+  "title": "電話種別",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem24.html",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-07-01T07:31:38.636+00:00",
+    "source": "#TVKpHUKB28CEYHe6"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-ContactPointUse.html",
+  "concept": [
+    {
+      "code": "home",
+      "display": "自宅"
+    },
+    {
+      "code": "work",
+      "display": "勤務先"
+    },
+    {
+      "code": "temp",
+      "display": "一時的な連絡先"
+    },
+    {
+      "code": "old",
+      "display": "使用していない以前の連絡先"
+    },
+    {
+      "code": "mobile",
+      "display": "携帯電話"
+    }
+  ],
+  "count": 5
+}

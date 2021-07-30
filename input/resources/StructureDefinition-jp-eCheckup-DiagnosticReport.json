@@ -1,0 +1,204 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-DiagnosticReport",
+  "meta": {
+    "versionId": "29",
+    "lastUpdated": "2021-07-02T10:53:58.125+00:00",
+    "source": "#I8r46qRxVFdRE6vN"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Clinical.Diagnostics"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DiagnosticReport.html",
+  "version": "0.5.0",
+  "name": "DiagnosticReport",
+  "title": "DiagnosticReportリソース　検査報告書情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DiagnosticReport",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/DiagnosticReport",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DiagnosticReport",
+        "path": "DiagnosticReport",
+        "short": "DiagnosticReportリソースであることを示す"
+      },
+      {
+        "id": "DiagnosticReport.text",
+        "path": "DiagnosticReport.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。内容を省略しても構わない。このデータは人がこのリソースの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。 この内容と以降の構造化されたデータとの内容が不一致の場合には、この要素の内容は無視される。（本文書のすべてのリソースで同様とする）",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.text.status",
+        "path": "DiagnosticReport.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.text.div",
+        "path": "DiagnosticReport.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.status",
+        "path": "DiagnosticReport.status",
+        "short": "\"final\" 固定。",
+        "fixedCode": "final",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.code",
+        "path": "DiagnosticReport.code",
+        "short": "報告書種別を表すコード。例えばLOINCコードを使用する。",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/consent-content-code"
+        }
+      },
+      {
+        "id": "DiagnosticReport.code.coding",
+        "path": "DiagnosticReport.code.coding",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.code.coding.system",
+        "path": "DiagnosticReport.code.coding.system",
+        "short": "報告書種別コード体系を識別するURI。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for uri",
+            "valueUri": "http://loinc.org"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.code.coding.code",
+        "path": "DiagnosticReport.code.coding.code",
+        "short": "報告書種別コード。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "18748-4"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.code.coding.display",
+        "path": "DiagnosticReport.code.coding.display",
+        "short": "コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "画像検査報告書。"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.media",
+        "path": "DiagnosticReport.media",
+        "short": "検査報告書に含まれる検査画像。",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.media.comment",
+        "path": "DiagnosticReport.media.comment",
+        "short": "検査報告書に含まれる検査画像に対するコメント。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "腹部エコー"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.media.link",
+        "path": "DiagnosticReport.media.link",
+        "short": "検査報告書に含まれる検査画像を表すMediaリソースへの参照。",
+        "mustSupport": true
+      },
+      {
+        "id": "DiagnosticReport.media.link.reference",
+        "path": "DiagnosticReport.media.link.reference",
+        "short": "参照されるMediaリソースのfullUrl要素に指定されるUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:673f8db5-0ffd-4395-9657-6da00420bbc3"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

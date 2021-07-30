@@ -1,0 +1,1 @@
+転記者に関して、作成者以外の者が転記した場合は、HL7 FHIR C-CDA DataEnterer 拡張（http://hl7.org/fhir/ccda/StructureDefinition/ccda-data-enterer-extension）を使用する。

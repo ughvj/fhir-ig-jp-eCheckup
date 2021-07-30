@@ -1,0 +1,42 @@
+{
+  "resourceType": "Organization",
+  "id": "jp-eCheckup-OrganizationSS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization.html"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-06-23T08:00:38.182+00:00",
+    "source": "#TqzKDBGzm3XZITTC"
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.200119.6.102",
+      "value": "1311234567"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/organization-type",
+          "code": "prov"
+        }
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "0123-456-7890"
+    }
+  ],
+  "name": "厚生労働省第一病院",
+  "address": [
+    {
+      "text": "〒100-0001 東京都千代田区千代田９－９－９",
+      "postalCode": "100-0001",
+      "country": "JP"
+    }
+  ]
+}

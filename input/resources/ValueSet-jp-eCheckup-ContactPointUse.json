@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "ContactPointUse",
+  "id": "jp-eCheckup-ContactPointUse",
+  "title": "電話種別",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-ContactPointUse.html",
+  "meta": {
+    "versionId": "7",
+    "lastUpdated": "2021-07-01T07:53:01.017+00:00",
+    "source": "#QjcJGbN2Ky4M4hE3"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem24.html"
+      }
+    ]
+  }
+}

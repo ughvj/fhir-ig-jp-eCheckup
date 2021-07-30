@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "TestResultItem",
+  "id": "jp-eCheckup-TestResultItem",
+  "title": "検査結果項目パターン①②で指定するデータ",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-TestResultItem.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:56:11.736+00:00",
+    "source": "#h0ovo1YPlK1sdypd"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem30.html"
+      }
+    ]
+  }
+}

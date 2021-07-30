@@ -1,0 +1,830 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-Composition",
+  "meta": {
+    "versionId": "146",
+    "lastUpdated": "2021-07-02T06:57:21.704+00:00",
+    "source": "#Gpf8nQiX6PsvLiPu"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Foundation.Documents"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "not-classified"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Composition.html",
+  "version": "0.5.0",
+  "name": "Composition",
+  "title": "Compositionリソース　文書構成情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "description": "健診結果報告書FHIR documentにentry として格納される複数のリソースのうちの最初に出現するもので、この文書全体の構成目次に相当する情報や、セクションの構成を記述したものである。 健診結果報告書は、4.1.1「文書構造」で述べたように、健診項目、及び、問診項目を格納するセクション、及び、添付文書を格納する添付文書セクションから構成される。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "cda",
+      "uri": "http://hl7.org/v3/cda",
+      "name": "CDA (R2)"
+    },
+    {
+      "identity": "fhirdocumentreference",
+      "uri": "http://hl7.org/fhir/documentreference",
+      "name": "FHIR DocumentReference"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Compositionリソースであることを示す"
+      },
+      {
+        "id": "Composition.language",
+        "path": "Composition.language",
+        "short": "日本語を指定する場合、”ja”を指定する。",
+        "definition": "使用する場合は日本語環境(ja)を規定する。",
+        "fixedCode": "ja",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.text",
+        "path": "Composition.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。内容を省略しても構わない。 このデータは人がこのリソースの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。 この内容と以降の構造化されたデータとの内容が不⼀致の場合には、この要素の内容は無視される。（本文書のすべてのリソースで同様とする）",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.text.status",
+        "path": "Composition.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.text.div",
+        "path": "Composition.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension",
+        "path": "Composition.extension",
+        "short": "健診結果報告書の文書バージョンを表す拡張「composition-clinicaldocument-versionNumber」。",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension.extension",
+        "path": "Composition.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension.url",
+        "path": "Composition.extension.url",
+        "short": "拡張を識別するURL。",
+        "fixedUri": "http://hl7.org/fhir/StructureDefinition/composition-clinicaldocument-versionNumber",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension.value[x]",
+        "path": "Composition.extension.value[x]",
+        "short": "文書のバージョン番号を表す文字列。",
+        "definition": "拡張「clinicaldocument-versionNumber」を使用する。\n\n本ドキュメントのバージョン番号を指定する。バージョン1.0の場合は記述の省略を認めるが、それ以外のバージョンの場合は記述を必須とする。バージョン毎の指定方法を以下に示す。なお、健診結果報告書仕様では、CDA R2のデータ型の制約からバージョン2.0を\"20\"と表記する必要があったが、本文書では、\"2.0\"と文字列で指定してよい。",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "1.0"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "short": "このリソースの識別ID。実装に応じた健康診断結果報告書IDを記述する。",
+        "definition": "実装に応じた健康診断結果報告書IDを記述する。\n\n健康診断結果報告書ID体系OIDとして、施設OIDをルートとする健康診断結果報告書個別ID発行規定OIDを施設ごとに決め、その規定にそった健康診断結果報告書個別IDをvalue要素に記述する方法も考えられる。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier.system",
+        "path": "Composition.identifier.system",
+        "short": "健康診断結果報告書IDの名前空間を表すURI。",
+        "min": 1,
+        "fixedUri": "http://jpfhir.jp/fhir/eCheckup/documentIdentifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier.value",
+        "path": "Composition.identifier.value",
+        "short": "健康診断結果報告書ID",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "12345"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "short": "この文書のステータス。",
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "final"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "short": "Compositionが表す文書の種類。本規格では、コード体系 文書区分コード（ http://jpfhir.jp/eCheckup/CodeSystem/documentType）より、「01:健康診断結果報告書」を指定する。",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup-ValueSet-documentType.html"
+        }
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding.system",
+        "path": "Composition.type.coding.system",
+        "short": "文書区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/documentType",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding.code",
+        "path": "Composition.type.coding.code",
+        "short": "文書区分コード。”01：健康診断結果報告書”を指定。",
+        "min": 1,
+        "fixedCode": "01",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding.display",
+        "path": "Composition.type.coding.display",
+        "short": "文書区分コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "健康診断結果報告書"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "short": "報告区分を表すコードを設定する。このファイルが作成された目的や作成タイミングなどの情報を格納するために使用される。",
+        "definition": "本健康診断結果報告書コードを規定する。coding.code要素には、5.1.2.1 「報告区分コード」を用いる。coding.system要素は「urn:oid:2.16.840.1.113883.2.2.1.6.1001」となる。coding.version要素、coding.dislay要素は省略してもよい。\n\n報告区分コードを任意に増設する場合には、増設したコードを含むコード体系を定義し、そのコード体系のコードを指定することにより追加が可能である。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupReportCategory.html"
+        }
+      },
+      {
+        "id": "Composition.category.coding",
+        "path": "Composition.category.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding.system",
+        "path": "Composition.category.coding.system",
+        "short": "報告区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.2.1.6.1001",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding.code",
+        "path": "Composition.category.coding.code",
+        "short": "報告区分コード。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "01"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category.coding.display",
+        "path": "Composition.category.coding.display",
+        "short": "コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "特定健診"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "short": "患者情報を表すPatientリソースへの参照。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.subject.reference",
+        "path": "Composition.subject.reference",
+        "short": "PatientリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:1af0a9a6-a91d-3aef-fc4e-069995b89c4f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "short": "健診を表すEncounterリソースへの参照。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.encounter.reference",
+        "path": "Composition.encounter.reference",
+        "short": "EncounterリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "short": "このリソースを作成または最後に編集した日時。ISO8601に準拠し、秒の精度まで記録し、タイムゾーンも付記する。午前0時を”24:00”と記録することはできないため”00:00”と記録すること。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "short": "本文書を作成した施設および作成者への参照。",
+        "min": 2,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author.reference",
+        "path": "Composition.author.reference",
+        "short": "PractitionerRoleリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:7f60d206-66c5-4998-931e-86bf2b2d0bdc"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "short": "この文書の（人が読める）タイトル。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "健康診断結果のお知らせ"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.confidentiality",
+        "path": "Composition.confidentiality",
+        "short": "本個人提供用健診結果報告書アクセス基準を記述する。",
+        "definition": "バリューセット「V3 Value SetConfidentialityClassification」から適切なコードを選択する。しかるべき権限を持つ通常のアクセスを許可する場合はコード「N」を記述すればよい。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "N"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "short": "健診結果報告書の作成・修正をおこない報告書の管理責任を持つ施設（Organizationリソース）への参照。報告書作成機関と同一の場合、本要素を省略してもよい。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.custodian.reference",
+        "path": "Composition.custodian.reference",
+        "short": "custodianに対応するOrganizationリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event",
+        "path": "Composition.event",
+        "short": "健診実施情報として、健診がどの区分として実施されたかを示す健診プログラムサービスコードと、健診実施年月日を指定する。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.code",
+        "path": "Composition.event.code",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupProgramServiceCode.html"
+        }
+      },
+      {
+        "id": "Composition.event.code.coding",
+        "path": "Composition.event.code.coding",
+        "short": "健診プログラムサービスコード。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.code.coding.system",
+        "path": "Composition.event.code.coding.system",
+        "short": "健診プログラムサービスコードを識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:2.16.840.1.113883.2.2.1.6.1002",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.code.coding.code",
+        "path": "Composition.event.code.coding.code",
+        "short": "健診プログラムサービスコード。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for code",
+            "valueCode": "010"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.code.coding.display",
+        "path": "Composition.event.code.coding.display",
+        "short": "健診プログラムサービスコードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "特定健診"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.period",
+        "path": "Composition.event.period",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.period.start",
+        "path": "Composition.event.period.start",
+        "short": "健診実施日。ISO8601に準拠yyyy-mm-dd形式で記述する。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.period.end",
+        "path": "Composition.event.period.end",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.detail",
+        "path": "Composition.event.detail",
+        "short": "健診を表すEncounterリソースへの参照。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.event.detail.reference",
+        "path": "Composition.event.detail.reference",
+        "short": "参照されるEncounterリソースのfullUrl要素に指定されたUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:1af0a9a6-a91d-8aef-d14e-069795b89c9f"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code.coding.code"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 3,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1",
+        "path": "Composition.section",
+        "sliceName": "1",
+        "short": "健診セクション。健診項目のうち問診以外の項目に関連するリソースが全て本セクションに含まれる。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.title",
+        "path": "Composition.section.title",
+        "short": "セクションタイトル。",
+        "min": 1,
+        "fixedString": "健診情報",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-sectionCode.html"
+        }
+      },
+      {
+        "id": "Composition.section:1.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "セクション区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.200119.6.1002",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "健診セクションを表すセクション区分のコード値。",
+        "min": 1,
+        "fixedCode": "01910",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "セクション区分コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "健診セクション"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.text",
+        "path": "Composition.section.text",
+        "short": "セクションの内容を表す文字列。書式は4.2.2.2.2「テキスト部（ナラティブ）仕様」の本文を参照。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.text.status",
+        "path": "Composition.section.text.status",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.text.div",
+        "path": "Composition.section.text.div",
+        "short": "本セクションの内容をテキストで表現した文字列を入れてもよい。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.entry",
+        "path": "Composition.section.entry",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "reference"
+            }
+          ],
+          "rules": "open"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:1.entry:named1",
+        "path": "Composition.section.entry",
+        "sliceName": "named1",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:1.entry:named2",
+        "path": "Composition.section.entry",
+        "sliceName": "named2",
+        "min": 0,
+        "max": "*"
+      },
+      {
+        "id": "Composition.section:2",
+        "path": "Composition.section",
+        "sliceName": "2",
+        "short": "問診セクション。健診項目のうち問診項目に関連するリソースが全て本セクションに含まれる。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.title",
+        "path": "Composition.section.title",
+        "short": "セクションタイトル。",
+        "min": 1,
+        "fixedString": "問診情報",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-sectionCode.html"
+        }
+      },
+      {
+        "id": "Composition.section:2.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "セクション区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.200119.6.1002",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "問診セクションを表すセクション区分のコード値。",
+        "min": 1,
+        "fixedCode": "01920",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "セクション区分コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "セクション区分コードの表示名。"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.text",
+        "path": "Composition.section.text",
+        "short": "セクションの内容を表す文字列。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.text.status",
+        "path": "Composition.section.text.status",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.text.div",
+        "path": "Composition.section.text.div",
+        "short": "本セクションの内容をテキストで表現した文字列を入れてもよい。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.entry",
+        "path": "Composition.section.entry",
+        "short": "問診情報セクションに含まれるリソースの参照。検査項目を表すObservationリソースが含まれる。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:2.entry.reference",
+        "path": "Composition.section.entry.reference",
+        "short": "参照先のリソースのfullUrl要素に指定されるUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:ef7892cc-fb3a-b951-9ac7-f8cd6c746f0a"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3",
+        "path": "Composition.section",
+        "sliceName": "3",
+        "short": "添付書類セクション。健診結果報告書に関連する添付処理を表すリソースが全て本セクションに含まれる。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.title",
+        "path": "Composition.section.title",
+        "short": "セクションタイトル。",
+        "min": 1,
+        "fixedString": "添付書類",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-sectionCode.html"
+        }
+      },
+      {
+        "id": "Composition.section:3.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "short": "セクション区分コードのコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.200119.6.1002",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "short": "添付書類セクションを表すセクション区分のコード値。",
+        "min": 1,
+        "fixedCode": "01995",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.code.coding.display",
+        "path": "Composition.section.code.coding.display",
+        "short": "セクション区分コードの表示名。",
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "添付書類セクション"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.text",
+        "path": "Composition.section.text",
+        "short": "セクションの内容を表す文字列。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.text.status",
+        "path": "Composition.section.text.status",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.text.div",
+        "path": "Composition.section.text.div",
+        "short": "本セクションの内容をテキストで表現した文字列を入れてもよい。内容を省略しても構わない。 このデータは人がこのセクションの内容の概略をひと目で把握するためだけに使われるものであり、データ処理対象としてはならない。",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.entry",
+        "path": "Composition.section.entry",
+        "short": "添付書類セクションに含まれるリソースの参照。添付書類を表すDocumentReferenceリソースが含まれる。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:3.entry.reference",
+        "path": "Composition.section.entry.reference",
+        "short": "参照先のリソースのfullUrl要素に指定されるUUID。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:ef7892cc-fb3a-b951-9ac7-f8cd6c746f0a"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

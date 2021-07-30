@@ -1,0 +1,17 @@
+{
+  "resourceType": "Media",
+  "id": "jp-eCheckup-MediaSS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Media.html"
+    ],
+    "versionId": "2",
+    "lastUpdated": "2021-06-24T03:48:35.273+00:00",
+    "source": "#iOlUw71pJwwyy2GI"
+  },
+  "status": "completed",
+  "content": {
+    "contentType": "application/dicom",
+    "data": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxw=="
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation2-2SS",
+  "meta": {
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ],
+    "versionId": "5",
+    "lastUpdated": "2021-06-24T04:45:21.557+00:00",
+    "source": "#Vyq5pU4SKpHlVRhr"
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "2A020000001930101",
+        "display": "赤血球数"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ]
+    }
+  ],
+  "specimen": {
+    "reference": "Specimen/jp-eCheckup-SpecimenSS"
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 427,
+        "code": "10*4/mm3",
+        "system": "http://unitsofmeasure.org",
+        "unit": "10*4/mm3"
+      },
+      "high": {
+        "value": 570,
+        "code": "10*4/mm3",
+        "system": "http://unitsofmeasure.org",
+        "unit": "10*4/mm3"
+      }
+    }
+  ]
+}

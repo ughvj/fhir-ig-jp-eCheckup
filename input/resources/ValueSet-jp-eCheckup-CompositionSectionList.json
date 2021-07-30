@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "CompositionSectionList",
+  "id": "jp-eCheckup-CompositionSectionList",
+  "title": "セクション一覧",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-CompositionSectionList.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-07-01T07:52:47.052+00:00",
+    "source": "#LKjJtibb3rXq71JL"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem27.html"
+      }
+    ]
+  }
+}

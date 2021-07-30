@@ -1,0 +1,21 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "JapaneseYearConversionJapaneseYearConversion",
+  "id": "jp-eCheckup-JapaneseYearConversion",
+  "title": "和暦西暦変換",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-JapaneseYearConversion.html",
+  "meta": {
+    "versionId": "3",
+    "lastUpdated": "2021-07-01T07:51:30.389+00:00",
+    "source": "#Ps822rMwfoXia9jN"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem26.html"
+      }
+    ]
+  }
+}
