@@ -1,0 +1,43 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation7SS",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-06-24T04:47:22.405+00:00",
+    "source": "#laqK7yy7tmGw4ZAa",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "1A020000000191111",
+        "display": "尿糖"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "dataAbsentReason": {
+    "coding": [
+      {
+        "code": "not-performed",
+        "system": "http://terminology.hl7.org/CodeSystem/dataabsent-reason"
+      }
+    ]
+  }
+}

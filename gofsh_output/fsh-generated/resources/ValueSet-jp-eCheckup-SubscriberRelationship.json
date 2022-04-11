@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "subscriber-relationship",
+  "id": "jp-eCheckup-SubscriberRelationship",
+  "title": "被保険者区分コード",
+  "description": "被保険者区分を表すバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-subscriber-relationship.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T08:04:41.389+00:00",
+    "source": "#fLgkPqJP7ig85NT4"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem7.html"
+      }
+    ]
+  }
+}

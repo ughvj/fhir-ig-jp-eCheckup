@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem7",
+  "id": "CodeSystem7",
+  "title": "被保険者区分コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem7.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-02T00:42:42.452+00:00",
+    "source": "#PmfPrJUSunLvt47d"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:1.2.392.100495.20.2.62"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-subscriber-relationship.html"
+}

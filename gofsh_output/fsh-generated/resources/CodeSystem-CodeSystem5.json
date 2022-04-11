@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem5",
+  "id": "CodeSystem5",
+  "title": "券面種別コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem5.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-01T07:35:50.904+00:00",
+    "source": "#oG8wzITevGHVj25Q"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:1.2.392.200119.6.208"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupCardType.html"
+}

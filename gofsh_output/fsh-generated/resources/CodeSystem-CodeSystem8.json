@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem8",
+  "id": "CodeSystem8",
+  "title": "受診区分",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem8.html",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-07-02T00:43:20.835+00:00",
+    "source": "#718WPhG0xAfG1vFB"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/encounterCategory"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-encounterCategory.html"
+}

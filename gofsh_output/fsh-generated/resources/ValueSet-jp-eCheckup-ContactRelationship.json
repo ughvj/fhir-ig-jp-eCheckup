@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "contactRelationship",
+  "id": "jp-eCheckup-ContactRelationship",
+  "title": "受診者追加情報種別コード",
+  "description": "受診者追加情報として組織との関係（勤務先／事業場）を示す区分のバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-contactRelationship.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:57:40.054+00:00",
+    "source": "#LRA6e3yVKvbTdcH6"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem22.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "observationCode",
+  "id": "jp-eCheckup-ObservationCode",
+  "title": "追加健診項目コード",
+  "description": "人間ドック関連追加項目コードを表すバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-observationCode.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T08:04:10.428+00:00",
+    "source": "#b2mYMxxWRThyjbHv"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem12.html"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem14",
+  "id": "CodeSystem14",
+  "title": "判定区分（人間ドック学会2008）",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem14.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:08:14.930+00:00",
+    "source": "#J1O8Y0ZD6ZMS2xpO"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5020.1.2"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-ningendock2008.html"
+}

@@ -1,0 +1,62 @@
+{
+  "resourceType": "Patient",
+  "id": "jp-eCheckup-PatientSS",
+  "meta": {
+    "versionId": "1",
+    "lastUpdated": "2021-06-14T07:40:08.531+00:00",
+    "source": "#ckq7qImATe79jCOc",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Patient.html"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "urn:oid:1.2.392.200119.6.102.11234567890",
+      "value": "34567"
+    }
+  ],
+  "name": [
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "IDE"
+        }
+      ],
+      "use": "official",
+      "family": "健診",
+      "given": [
+        "太郎"
+      ]
+    },
+    {
+      "extension": [
+        {
+          "url": "http://hl7.org/fhir/StructureDefinition/iso21090-EN-representation",
+          "valueCode": "SYL"
+        }
+      ],
+      "use": "official",
+      "family": "ケンシン",
+      "given": [
+        "タロウ"
+      ]
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03-1111-2222",
+      "use": "home"
+    }
+  ],
+  "gender": "male",
+  "birthDate": "1950-05-04",
+  "address": [
+    {
+      "text": "神奈川県横浜市港区１－２－３",
+      "postalCode": "123-4567",
+      "country": "JP"
+    }
+  ]
+}

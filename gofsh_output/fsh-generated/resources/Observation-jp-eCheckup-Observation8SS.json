@@ -1,0 +1,63 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation8SS",
+  "meta": {
+    "versionId": "5",
+    "lastUpdated": "2021-06-24T04:47:36.857+00:00",
+    "source": "#oN9BD4HQ5OPo0MM6",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "3F015000002327101",
+        "display": "中性脂肪"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "method": {
+    "coding": [
+      {
+        "code": "3F01510000",
+        "system": "urn:oid:1.2.392.200119.6.1007",
+        "display": "可視吸光光度法（酵素比色法・グリセロール消去）"
+      }
+    ]
+  },
+  "specimen": {
+    "reference": "Specimen/jp-eCheckup-SpecimenSS"
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 50,
+        "code": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mg/dl"
+      },
+      "high": {
+        "value": 150,
+        "code": "mg/dL",
+        "system": "http://unitsofmeasure.org",
+        "unit": "mg/dl"
+      }
+    }
+  ]
+}

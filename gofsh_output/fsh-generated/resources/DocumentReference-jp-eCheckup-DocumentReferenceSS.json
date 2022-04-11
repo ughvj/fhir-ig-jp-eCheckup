@@ -1,0 +1,29 @@
+{
+  "resourceType": "DocumentReference",
+  "id": "jp-eCheckup-DocumentReferenceSS",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-06-22T04:36:08.340+00:00",
+    "source": "#wL8uCFn5VThVW03d",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-DocumentReference.html"
+    ]
+  },
+  "status": "current",
+  "description": "１２誘導心電図 MFER データ",
+  "content": [
+    {
+      "attachment": {
+        "contentType": "application/mwf",
+        "data": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxw=="
+      }
+    }
+  ],
+  "context": {
+    "related": [
+      {
+        "reference": "Observation/jp-eCheckup-ObservationSS"
+      }
+    ]
+  }
+}

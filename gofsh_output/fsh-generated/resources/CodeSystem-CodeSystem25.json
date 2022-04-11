@@ -1,0 +1,35 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem25",
+  "id": "CodeSystem25",
+  "title": "性別コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem25.html",
+  "concept": [
+    {
+      "code": "male",
+      "display": "男性"
+    },
+    {
+      "code": "female",
+      "display": "女性"
+    },
+    {
+      "code": "other",
+      "display": "その他"
+    },
+    {
+      "code": "unknown",
+      "display": "不明"
+    }
+  ],
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-07-01T07:31:49.020+00:00",
+    "source": "#pGBeGUZmQdW09ptW"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-AdministrativeGender.html",
+  "count": 4
+}

@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem1",
+  "id": "CodeSystem1",
+  "title": "文書区分コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem1.html",
+  "meta": {
+    "versionId": "10",
+    "lastUpdated": "2021-07-01T07:03:19.718+00:00",
+    "source": "#OoHOf5VBhAX4ph8R"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/documentType"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-documentType.html"
+}

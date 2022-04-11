@@ -1,0 +1,215 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-Coverage",
+  "meta": {
+    "versionId": "25",
+    "lastUpdated": "2021-07-02T10:35:44.467+00:00",
+    "source": "#UDZ9C4r0RUxTpjtz"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Financial.Support"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "patient"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Coverage.html",
+  "version": "0.5.0",
+  "name": "Coverage",
+  "title": "Coverageリソース　受診券情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "description": "受診者が健診実施時に属した保険者の情報および、その保険者が発行した受診券に関する情報を表現する。本情報は、特定健診の結果を受診者の希望により電子的に提供するケースにおいては任意に記述して差し支えないが、それ以外ではなくてもよい。\n\n受診券が発行されないケースでは、本要素は出現しない。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "workflow",
+      "uri": "http://hl7.org/fhir/workflow",
+      "name": "Workflow Pattern"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    },
+    {
+      "identity": "cdanetv4",
+      "uri": "http://www.cda-adc.ca/en/services/cdanet/",
+      "name": "Canadian Dental Association eclaims standard"
+    },
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "cpha3pharm",
+      "uri": "http://www.pharmacists.ca/",
+      "name": "Canadian Pharmacy Associaiton eclaims standard"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Coverage",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Coverage",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Coverage",
+        "path": "Coverage",
+        "short": "Coverageリソースであることを示す"
+      },
+      {
+        "id": "Coverage.text",
+        "path": "Coverage.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.text.status",
+        "path": "Coverage.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.text.div",
+        "path": "Coverage.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.status",
+        "path": "Coverage.status",
+        "fixedCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type",
+        "path": "Coverage.type",
+        "short": "受診券を表す種別を指定する。",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupCardType.html"
+        }
+      },
+      {
+        "id": "Coverage.type.coding",
+        "path": "Coverage.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.system",
+        "path": "Coverage.type.coding.system",
+        "short": "受診券の券面種別コード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.200119.6.208",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.type.coding.code",
+        "path": "Coverage.type.coding.code",
+        "short": "受診券情報であることを表すコード。",
+        "min": 1,
+        "fixedCode": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.subscriberId",
+        "path": "Coverage.subscriberId",
+        "short": "受診券整理番号",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "21100000123"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.beneficiary",
+        "path": "Coverage.beneficiary",
+        "short": "受診者情報（Patientリソース）へのリテラル参照。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period",
+        "path": "Coverage.period",
+        "short": "受診券の有効期間。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period.start",
+        "path": "Coverage.period.start",
+        "short": "受診券の有効期間の開始日。資格取得日。ISO8601に準拠してyyyy-mm-dd形式で指定する。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.period.end",
+        "path": "Coverage.period.end",
+        "short": "受診券の有効期間の終了日。資格喪失日。ISO8601に準拠してyyyy-mm-dd形式で指定する。",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor",
+        "path": "Coverage.payor",
+        "short": "受診券の発行者である費用負担者（医療保険の場合は保険者）情報。費用負担者を表すOrganizationリソースへの参照。",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Coverage.payor.reference",
+        "path": "Coverage.payor.reference",
+        "short": "OrganizationリソースのfullUrl要素に指定されるUUIDを指定。値は例示。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:7c9f9f7f-e546-0ac2-6828-a9e0b24e5750"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

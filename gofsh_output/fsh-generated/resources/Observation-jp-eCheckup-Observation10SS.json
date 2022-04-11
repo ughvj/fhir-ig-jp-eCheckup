@@ -1,0 +1,40 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation10SS",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-06-24T04:44:33.886+00:00",
+    "source": "#j4pE6oECpaNJG5vr",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "imaging"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "9N201000000000011",
+        "display": "胸部X 線検査（がん：直接撮影）"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "derivedFrom": [
+    {
+      "reference": "Media/jp-eCheckup-MediaSS"
+    }
+  ]
+}

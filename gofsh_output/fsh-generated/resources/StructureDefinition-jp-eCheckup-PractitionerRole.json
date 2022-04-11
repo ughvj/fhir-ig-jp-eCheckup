@@ -1,0 +1,146 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-PractitionerRole",
+  "meta": {
+    "versionId": "14",
+    "lastUpdated": "2021-07-01T13:04:19.986+00:00",
+    "source": "#8A4Z8vPXqFVwr7r4"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Individuals"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "individual"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-PractitionerRole.html",
+  "version": "0.5.0",
+  "name": "PractitionerRole",
+  "title": "PractitionerRoleリソース　文書作成者役割情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "PractitionerRole",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/PractitionerRole",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "PractitionerRole",
+        "path": "PractitionerRole",
+        "short": "PractitionerRoleリソースであることを示す"
+      },
+      {
+        "id": "PractitionerRole.text",
+        "path": "PractitionerRole.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.text.status",
+        "path": "PractitionerRole.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.text.div",
+        "path": "PractitionerRole.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.practitioner",
+        "path": "PractitionerRole.practitioner",
+        "short": "健診結果報告書作成者を表すPractitionerリソースへの参照",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.practitioner.reference",
+        "path": "PractitionerRole.practitioner.reference",
+        "short": "PractitionerリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:195a292d-169a-5cc4-0e10-7a1c0d3fcb2b"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.organization",
+        "path": "PractitionerRole.organization",
+        "short": "健診結果報告書作成機関を表すOrganizationリソースへの参照。",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "PractitionerRole.organization.reference",
+        "path": "PractitionerRole.organization.reference",
+        "short": "OrganizationリソースのfullUrl要素に指定されるUUIDを指定。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "urn:uuid:179f9f7f-e546-04c2-6888-a9e0b24e5720"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

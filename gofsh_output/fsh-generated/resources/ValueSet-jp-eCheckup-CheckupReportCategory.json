@@ -1,0 +1,22 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "checkupReportCategory",
+  "id": "jp-eCheckup-CheckupReportCategory",
+  "title": "報告区分コード",
+  "description": "健診結果が、どの健診事業として報告されるかを示す健診報告区分を表すバリューセット。",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-checkupReportCategory.html",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-07-01T07:57:22.010+00:00",
+    "source": "#ZnA4YHkziBgjAd8t"
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem2.html"
+      }
+    ]
+  }
+}

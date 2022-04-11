@@ -1,0 +1,64 @@
+{
+  "resourceType": "Observation",
+  "id": "jp-eCheckup-Observation2-1SS",
+  "meta": {
+    "versionId": "6",
+    "lastUpdated": "2021-06-24T04:44:54.022+00:00",
+    "source": "#9Su3QagKPvLkRqx6",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Observation.html"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/JLAC10",
+        "code": "2A030000001930101",
+        "display": "血色素量"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/jp-eCheckup-PatientSS"
+  },
+  "interpretation": [
+    {
+      "coding": [
+        {
+          "code": "N",
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation"
+        }
+      ]
+    }
+  ],
+  "specimen": {
+    "reference": "Specimen/jp-eCheckup-SpecimenSS"
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 12.5,
+        "code": "g/dL",
+        "system": "http://unitsofmeasure.org",
+        "unit": "g/dl"
+      },
+      "high": {
+        "value": 15.9,
+        "code": "g/dL",
+        "system": "http://unitsofmeasure.org",
+        "unit": "g/dl"
+      }
+    }
+  ]
+}

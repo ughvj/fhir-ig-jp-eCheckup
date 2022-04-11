@@ -1,0 +1,34 @@
+{
+  "resourceType": "Encounter",
+  "id": "jp-eCheckup-EncounterSS",
+  "meta": {
+    "versionId": "2",
+    "lastUpdated": "2021-06-22T04:43:00.232+00:00",
+    "source": "#wkgJUvmiUuuVZiLV",
+    "profile": [
+      "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Encounter.html"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://jpfhir.jp/fhir/eCheckup/CodeSystem/encounterCategory",
+    "code": "checkup",
+    "display": "健診"
+  },
+  "serviceType": {
+    "coding": [
+      {
+        "system": "urn:oid:1.2.392.200119.6.1002",
+        "code": "010",
+        "display": "特定健診"
+      }
+    ]
+  },
+  "period": {
+    "start": "2020-10-01",
+    "end": "2020-10-01"
+  },
+  "serviceProvider": {
+    "reference": "Organization/jp-eCheckup-OrganizationSS"
+  }
+}

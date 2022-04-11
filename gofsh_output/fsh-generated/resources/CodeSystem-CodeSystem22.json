@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem22",
+  "id": "CodeSystem22",
+  "title": "受診者追加情報種別コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem22.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-02T00:45:41.603+00:00",
+    "source": "#WnJ5p79B1aP0Fock"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5006"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-contactRelationship.html"
+}

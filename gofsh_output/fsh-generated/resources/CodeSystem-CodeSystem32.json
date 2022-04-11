@@ -1,0 +1,44 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem32",
+  "id": "CodeSystem32",
+  "title": "その他の判定区分",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem32.html",
+  "concept": [
+    {
+      "code": "2.16.840.1.113883.2.2.1.5020.2.1",
+      "display": "判定区分コード タイプA",
+      "definition": "1:異常なし、2:差し支えなし、3:生活様式改善し経過観察、4:要治療、5:要精査、6:治療中"
+    },
+    {
+      "code": "2.16.840.1.113883.2.2.1.5020.2.2",
+      "display": "判定区分コード タイプB",
+      "definition": "1:異常なし、2:心配なし、3:要注意、4:経過観察、5:要再検査、6:要精密検査、7:要治療、8:治療中、9:その他"
+    },
+    {
+      "code": "2.16.840.1.113883.2.2.1.5020.2.3",
+      "display": "判定区分コード タイプC",
+      "definition": "1:今回の検査では異常ありません。2:特に問題ありませんが、年１回の検査をお勧めします。3:再検査および定期検査を要します。4:精密検査を要します。5:治療を必要とします。6:治療を継続してください。"
+    },
+    {
+      "code": "2.16.840.1.113883.2.2.1.5020.2.4",
+      "display": "判定区分コード タイプD",
+      "definition": "1:異常なし、2:僅かに異常を認めるも日常生活に差し支えなし、3:食事等日常生活に注意し経過観察を行う、4:薬、注射による治療、或いは入院を必要とする、5:再検査、精密検査を行う"
+    },
+    {
+      "code": "2.16.840.1.113883.2.2.1.5020.2.5",
+      "display": "判定区分コード タイプE",
+      "definition": "1:正常、2:要注意、3:要観察、4:要治療、5:治療中、6:要精検"
+    }
+  ],
+  "meta": {
+    "versionId": "7",
+    "lastUpdated": "2021-07-01T07:35:16.428+00:00",
+    "source": "#G9v8NOzCz60Cmx53"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-OhterAssesmentCategories.html",
+  "count": 5
+}

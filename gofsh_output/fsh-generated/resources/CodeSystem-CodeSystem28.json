@@ -1,0 +1,41 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem28",
+  "id": "CodeSystem28",
+  "title": "説明ブロックの対象検診項目",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem28.html",
+  "concept": [
+    {
+      "code": "身長",
+      "display": "cm"
+    },
+    {
+      "code": "体重",
+      "display": "kg"
+    },
+    {
+      "code": "BMI",
+      "display": "kg/m2"
+    },
+    {
+      "code": "腹囲",
+      "display": "cm"
+    },
+    {
+      "code": "メタボリックシンドローム判定"
+    },
+    {
+      "code": "保険指導レベル"
+    }
+  ],
+  "meta": {
+    "versionId": "7",
+    "lastUpdated": "2021-07-01T07:34:03.393+00:00",
+    "source": "#PlABqqHpEHS3sewq"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-ScreeningItem.html",
+  "count": 6
+}

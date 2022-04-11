@@ -1,0 +1,184 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "jp-eCheckup-Organization2",
+  "meta": {
+    "versionId": "23",
+    "lastUpdated": "2021-07-02T10:56:18.951+00:00",
+    "source": "#OVy6f9nWUfOXXDDn"
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-category",
+      "valueString": "Base.Entities"
+    },
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category",
+      "valueCode": "business"
+    }
+  ],
+  "url": "https://igs.healthdataworks.net/jp-eCheckup/StructureDefinition-jp-eCheckup-Organization2.html",
+  "version": "0.5.0",
+  "name": "Organization2",
+  "title": "Organizationリソース　保険者情報",
+  "status": "active",
+  "publisher": "HealthDataWorks",
+  "contact": [
+    {
+      "name": "実装ガイド作成：小山内 尚、西山 喜樹、能崎 克行",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://healthdataworks.net/"
+        }
+      ]
+    },
+    {
+      "name": "仕様策定メンバー：厚生労働科学特別研究事業 診療情報提供書, 電子処方箋等の電子化医療文書の相互運用性確保のための標準規格の開発研究 研究班",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "https://std.jpfhir.jp/"
+        }
+      ]
+    }
+  ],
+  "description": "保険者は、Coverageリソースのpayorから参照されるOrganizationリソースとして記録する。",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "v2",
+      "uri": "http://hl7.org/v2",
+      "name": "HL7 v2 Mapping"
+    },
+    {
+      "identity": "rim",
+      "uri": "http://hl7.org/v3",
+      "name": "RIM Mapping"
+    },
+    {
+      "identity": "servd",
+      "uri": "http://www.omg.org/spec/ServD/1.0/",
+      "name": "ServD"
+    },
+    {
+      "identity": "w5",
+      "uri": "http://hl7.org/fhir/fivews",
+      "name": "FiveWs Pattern Mapping"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "Organization",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Organization",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Organization",
+        "path": "Organization",
+        "short": "Organizationリソースであることを示す"
+      },
+      {
+        "id": "Organization.text",
+        "path": "Organization.text",
+        "short": "本リソースをテキストで表現したものを入れてもよい。",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.text.status",
+        "path": "Organization.text.status",
+        "short": "テキスト内容の全てがリソースのコンテンツから生成されたことを示す。",
+        "fixedCode": "generated",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.text.div",
+        "path": "Organization.text.div",
+        "example": [
+          {
+            "label": "for xhtml",
+            "valueString": "<div xmlns=\"http://www.w3.org/1999/xhtml\">xxx</div>"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier",
+        "path": "Organization.identifier",
+        "short": "保険者番号8桁。",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier.system",
+        "path": "Organization.identifier.system",
+        "short": "保険者番号8桁の名前空間を識別するURL。",
+        "min": 1,
+        "fixedUri": "urn:oid:1.2.392.100495.20.3.61",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.identifier.value",
+        "path": "Organization.identifier.value",
+        "short": "保険者番号8桁。",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "06123456"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type",
+        "path": "Organization.type",
+        "short": "施設種別",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/organization-type"
+        }
+      },
+      {
+        "id": "Organization.type.coding",
+        "path": "Organization.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type.coding.system",
+        "path": "Organization.type.coding.system",
+        "short": "施設種別を表すコード体系を識別するURI。",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/organization-type",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.type.coding.code",
+        "path": "Organization.type.coding.code",
+        "short": "バリューセットOrganizationType(http://hl7.org/fhir/ValueSet/organization-type) から、保険者を表すコードを指定。",
+        "min": 1,
+        "fixedCode": "ins",
+        "mustSupport": true
+      },
+      {
+        "id": "Organization.name",
+        "path": "Organization.name",
+        "short": "保険者名称",
+        "min": 1,
+        "example": [
+          {
+            "label": "for string",
+            "valueString": "サンプル健康保険組合"
+          }
+        ],
+        "mustSupport": true
+      }
+    ]
+  }
+}

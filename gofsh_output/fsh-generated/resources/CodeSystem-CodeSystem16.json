@@ -1,0 +1,22 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "not-present",
+  "name": "CodeSystem16",
+  "id": "CodeSystem16",
+  "title": "判定区分（協会けんぽ）",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem16.html",
+  "meta": {
+    "versionId": "4",
+    "lastUpdated": "2021-07-01T07:08:21.899+00:00",
+    "source": "#dmu3e8p1guawLcDZ"
+  },
+  "identifier": [
+    {
+      "use": "official",
+      "system": "urn:oid:2.16.840.1.113883.2.2.1.6.5020.1.4"
+    }
+  ],
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-diagnosisCode-kyoukaikenpo.html"
+}

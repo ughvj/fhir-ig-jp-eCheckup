@@ -1,0 +1,49 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "CodeSystem33",
+  "id": "CodeSystem33",
+  "title": "国際単位の項目コード",
+  "version": "0.5.0",
+  "url": "https://igs.healthdataworks.net/JP-eCheckup/CodeSystem-CodeSystem33.html",
+  "concept": [
+    {
+      "code": "3B035000002327201",
+      "display": "GOT(AST)",
+      "definition": "IU/L"
+    },
+    {
+      "code": "3B035000002399901",
+      "display": "GOT(AST)",
+      "definition": "IU/L"
+    },
+    {
+      "code": "3B045000002327201",
+      "display": "GPT(ALT)",
+      "definition": "IU/L"
+    },
+    {
+      "code": "3B045000002399901",
+      "display": "GPT(ALT)",
+      "definition": "IU/L"
+    },
+    {
+      "code": "3B090000002327101",
+      "display": "γ-GT(γ-GTP)",
+      "definition": "IU/L"
+    },
+    {
+      "code": "3B090000002399901",
+      "display": "γ-GT(γ-GTP)",
+      "definition": "IU/L"
+    }
+  ],
+  "meta": {
+    "versionId": "7",
+    "lastUpdated": "2021-07-01T07:35:27.325+00:00",
+    "source": "#b7HbTyi1PVNti66s"
+  },
+  "valueSet": "https://igs.healthdataworks.net/JP-eCheckup/ValueSet-InternationalUnitItemCode.html",
+  "count": 6
+}
